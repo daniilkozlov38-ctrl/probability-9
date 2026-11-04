@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf5">
+  <meta name="description" content="Сложение вероятностей. Теория, задачи и домашнее задание по материалам уроков.">
+  <title>Сложение вероятностей — Теория вероятностей · 9 класс</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script src="../../assets/site.js" defer></script>
+  <link rel="stylesheet" href="../../assets/lessons.css"><script src="../../assets/math-config.js" defer></script><script src="../../assets/vendor/mathjax/tex-svg-full.js" defer></script>
+</head>
+<body class="topic-page">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../../index.html" aria-label="Теория вероятностей · 9 класс — на главную">
+        <svg class="brand-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M11 12h18M11 12l9 17m9-17-9 17" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="11" cy="12" r="4" fill="currentColor"/>
+          <circle cx="29" cy="12" r="4" fill="currentColor"/>
+          <circle cx="20" cy="29" r="4" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">Теория вероятностей<span class="brand-class">9 класс</span></span>
+      </a>
+      <a class="header-map-link" href="../../index.html" aria-label="Карта курса" ><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="6" height="5" rx="1.5"/><rect x="15" y="15" width="6" height="5" rx="1.5"/><path d="M9 6.5h6a3 3 0 0 1 3 3V15M6 9v8.5h9"/></svg><span>Карта курса</span></a>
+    </div>
+  </header>
+  <main class="topic-main" id="main">
+  <nav class="breadcrumb" aria-label="Путь к теме"><a href="../../index.html">Карта курса</a><span aria-hidden="true">/</span><span>Тема 02</span></nav>
+  <div class="topic-intro">
+    <p class="eyebrow">Тема 02</p>
+    <h1>Сложение вероятностей</h1>
+  </div>
+  <nav class="section-nav" aria-label="Разделы темы">
+    <a href="#theory" aria-current="location">Теория</a><a href="#problems">Задачи</a><a href="#homework">ДЗ</a>
+  </nav>
+  <div class="lesson-layout">
+    <div class="lesson-content"><section class="lesson-section" id="theory" aria-labelledby="theory-title"><div class="section-heading"><span class="section-number">01</span><h2 id="theory-title">Теория</h2></div><div class="section-content"><h3 id="theory-subtopic-1">Сложение вероятностей</h3>
+<p>Мы пока что рассматриваем только случай <strong>конечного</strong> <em>пространства элементарных исходов</em></p>
+<aside class="lesson-box theorem" data-claim="addition-of-probabilities/theorem/1" id="theorem-1"><p><strong>Формула сложения вероятностей.</strong> Для событий <span class="math-inline">\(A\)</span> и <span class="math-inline">\(B\)</span> верно:</p>
+<div class="math-display">\[\mathbb{P}(A\cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A\cap B)\]</div></aside><details class="solution proof" id="solution-addition-of-probabilities-theorem-1" data-kind="proof" data-for="addition-of-probabilities/theorem/1"><summary aria-controls="solution-addition-of-probabilities-theorem-1-body">Показать доказательство</summary><div class="solution-body" id="solution-addition-of-probabilities-theorem-1-body"><p>Разобьём событие <span class="math-inline">\(A\)</span> на несовместные части <span class="math-inline">\(A\setminus B\)</span> и <span class="math-inline">\(A\cap B\):</span></p>
+<div class="math-display">\[\mathbb P(A)=\mathbb P(A\setminus B)+\mathbb P(A\cap B).\]</div>
+<p>Объединение <span class="math-inline">\(A\cup B\)</span> состоит из несовместных событий <span class="math-inline">\(A\setminus B\)</span> и <span class="math-inline">\(B\),</span> поэтому</p>
+<div class="math-display">\[\mathbb P(A\cup B)=\mathbb P(A\setminus B)+\mathbb P(B).\]</div>
+<p>Выразив из первого равенства <span class="math-inline">\(\mathbb P(A\setminus B)\)</span> и подставив во второе, получаем</p>
+<div class="math-display">\[\mathbb P(A\cup B)=\mathbb P(A)+\mathbb P(B)-\mathbb P(A\cap B).\]</div>
+<p>В обоих разбиениях использована аксиома аддитивности для несовместных событий.</p></div></details>
+<p class="exercise-statement" data-task="addition-of-probabilities/theory/example" id="task-example"><strong>Пример (объединение и пересечение событий).</strong> Продавщица выставляет два костюма на две витрины. В магазине есть чёрные, синие и белые костюмы. Костюмов каждого цвета достаточно; на обе витрины можно выставить костюмы одного цвета. Событие <span class="math-inline">\(A\):</span> белый костюм будет вывешен на первую витрину. Событие <span class="math-inline">\(B\):</span> белый костюм будет вывешен на вторую витрину. Перечислите элементарные события, которые входят в <span class="math-inline">\(A \cap B,\ A\cup B\).</span></p><details class="solution" id="solution-addition-of-probabilities-theory-example" data-kind="task" data-for="addition-of-probabilities/theory/example"><summary aria-controls="solution-addition-of-probabilities-theory-example-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-theory-example-body"><p>Обозначим цвета буквами Ч, С, Б. Исход записываем двумя буквами: первая — цвет костюма на первой витрине, вторая — на второй. Один цвет может повторяться.</p>
+<p>Тогда <span class="math-inline">\(A=\{\text{БЧ},\text{БС},\text{ББ}\}\)</span> и <span class="math-inline">\(B=\{\text{ЧБ},\text{СБ},\text{ББ}\}\).</span></p>
+<p>Оба события происходят одновременно только в исходе ББ:</p>
+<div class="math-display">\[A\cap B=\{\text{ББ}\}.\]</div>
+<p>Хотя бы одно из них происходит в пяти исходах:</p>
+<div class="math-display">\[A\cup B=\{\text{БЧ},\text{БС},\text{ББ},\text{ЧБ},\text{СБ}\}.\]</div>
+<p>Вероятности цветов в условии не заданы, поэтому здесь перечисляем события, не приписывая им численных вероятностей.</p></div></details>
+<aside class="lesson-box definition"><p><strong>Несовместными</strong> событиями называются такие события <span class="math-inline">\(A\)</span> и <span class="math-inline">\(B\),</span> что <span class="math-inline">\(A\cap B = \emptyset\)</span></p></aside>
+<p class="exercise-statement" data-task="addition-of-probabilities/theory/exercise" id="task-exercise"><strong>Упражнение.</strong> Докажите, что вероятность невозможного события <span class="math-inline">\((\emptyset)\)</span> равна <span class="math-inline">\(0\).</span></p><details class="solution" id="solution-addition-of-probabilities-theory-exercise" data-kind="task" data-for="addition-of-probabilities/theory/exercise"><summary aria-controls="solution-addition-of-probabilities-theory-exercise-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-theory-exercise-body"><p>События <span class="math-inline">\(\Omega\)</span> и <span class="math-inline">\(\varnothing\)</span> несовместны, а их объединение равно <span class="math-inline">\(\Omega\).</span> По аксиоме аддитивности</p>
+<div class="math-display">\[\mathbb P(\Omega)=\mathbb P(\Omega)+\mathbb P(\varnothing).\]</div>
+<p>Вычитая <span class="math-inline">\(\mathbb P(\Omega)\)</span> из обеих частей, получаем <span class="math-inline">\(\mathbb P(\varnothing)=0\).</span></p></div></details>
+<aside class="lesson-box theorem" data-claim="addition-of-probabilities/theorem/2" id="theorem-2"><p><strong>Формула сложения вероятностей несовместных событий.</strong> Для <strong>несовместных</strong> событий <span class="math-inline">\(A\)</span> и <span class="math-inline">\(B\)</span> верно:</p>
+<div class="math-display">\[\mathbb{P}(A\cup B) = \mathbb{P}(A) + \mathbb{P}(B)\]</div></aside><details class="solution proof" id="solution-addition-of-probabilities-theorem-2" data-kind="proof" data-for="addition-of-probabilities/theorem/2"><summary aria-controls="solution-addition-of-probabilities-theorem-2-body">Показать доказательство</summary><div class="solution-body" id="solution-addition-of-probabilities-theorem-2-body"><p>Для несовместных событий <span class="math-inline">\(A\cap B=\varnothing\),</span> а вероятность пустого события равна нулю. Поэтому из доказанной общей формулы сложения следует</p>
+<div class="math-display">\[\mathbb P(A\cup B)=\mathbb P(A)+\mathbb P(B)-0.\]</div>
+<p>Полученное равенство также непосредственно совпадает с аксиомой аддитивности.</p></div></details>
+<h3 id="theory-subtopic-2">Благоприятствующие события</h3>
+<aside class="lesson-box definition"><p>Элементарные исходы, содержащиеся в событии <span class="math-inline">\(A\)</span> называются <strong>благоприятствующими событиями событию</strong> <span class="math-inline">\(A\)</span></p></aside>
+<p>Теперь мы, зная вероятности элементарных исходов можем вычислять вероятности любых событий. Очевидно, что разные элементарные события несовместны.</p>
+<aside class="lesson-box theorem" data-claim="addition-of-probabilities/theorem/3" id="theorem-3"><p><strong>Вероятность события</strong> <span class="math-inline">\(A\)</span>  —  сумма вероятностей благоприятствующих событию <span class="math-inline">\(A\)</span> элементарных исходов</p></aside><details class="solution proof" id="solution-addition-of-probabilities-theorem-3" data-kind="proof" data-for="addition-of-probabilities/theorem/3"><summary aria-controls="solution-addition-of-probabilities-theorem-3-body">Показать доказательство</summary><div class="solution-body" id="solution-addition-of-probabilities-theorem-3-body"><p>Пусть событию <span class="math-inline">\(A\)</span> благоприятствуют элементарные события <span class="math-inline">\(\omega_1,\ldots,\omega_m\).</span> Тогда <span class="math-inline">\(A\)</span> — их объединение, а сами элементарные события попарно несовместны.</p>
+<p>Повторное применение формулы сложения для несовместных событий даёт</p>
+<div class="math-display">\[\mathbb P(A)=\mathbb P(\omega_1)+\cdots+\mathbb P(\omega_m).\]</div>
+<p>Если благоприятствующих событий нет, то <span class="math-inline">\(A=\varnothing\),</span> и обе части равны нулю.</p></div></details>
+
+</div></section>
+<section class="lesson-section" id="problems" aria-labelledby="problems-title"><div class="section-heading"><span class="section-number">02</span><h2 id="problems-title">Задачи</h2></div><div class="section-content"><p>Первая часть учебника</p>
+<div class="problem-statement" data-task="addition-of-probabilities/problems/1" id="task-problems-1"><p><strong>1. №273</strong> На тарелке лежат одинаковые на вид пирожки: 4 с мясом, 8 с капустой и 3 с вишней. Петя наугад берёт один пирожок. Найдите вероятность того, что пирожок окажется с вишней.</p></div><details class="solution" id="solution-addition-of-probabilities-problems-1" data-kind="task" data-for="addition-of-probabilities/problems/1"><summary aria-controls="solution-addition-of-probabilities-problems-1-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-problems-1-body"><p>Всего <span class="math-inline">\(4+8+3=15\)</span> пирожков. Благоприятствуют три исхода — выбор каждого из трёх пирожков с вишней. Вероятность выбора каждого пирожка равна <span class="math-inline">\(\frac1{15}\),</span> поэтому искомая вероятность равна <span class="math-inline">\(3\cdot\frac1{15}=\frac15=0,2\).</span></p></div></details>
+<div class="problem-statement" data-task="addition-of-probabilities/problems/2" id="task-problems-2"><p><strong>2. №275</strong> У бабушки десять чашек: шесть с красными цветами, остальные с синими. Бабушка наливает чай в случайно выбранную чашку. Найдите вероятность того, что это будет чашка с синими цветами.</p></div><details class="solution" id="solution-addition-of-probabilities-problems-2" data-kind="task" data-for="addition-of-probabilities/problems/2"><summary aria-controls="solution-addition-of-probabilities-problems-2-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-problems-2-body"><p>Синих чашек <span class="math-inline">\(10-6=4\).</span> Благоприятствующие исходы — выбор любой из этих четырёх чашек. Из десяти равновозможных выборов подходят четыре:</p>
+<div class="math-display">\[\mathbb P=4\cdot\frac1{10}=\frac4{10}=0,4.\]</div></div></details>
+<div class="problem-statement" data-task="addition-of-probabilities/problems/3" id="task-problems-3"><p><strong>3. №280</strong> Симметричную монету бросают два раза. Найдите вероятность следующих событий:<br> a) решка выпадет хотя бы один раз<br> б) в первый раз выпадет орёл</p></div><details class="solution" id="solution-addition-of-probabilities-problems-3" data-kind="task" data-for="addition-of-probabilities/problems/3"><summary aria-controls="solution-addition-of-probabilities-problems-3-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-problems-3-body"><p>Четыре равновозможных исхода: ОО, ОР, РО, РР, где О — орёл, Р — решка. Вероятность каждого равна <span class="math-inline">\(\frac14\).</span></p>
+<p>а) Хотя бы одна решка есть в исходах ОР, РО и РР. Вероятность равна <span class="math-inline">\(\frac34\).</span></p>
+<p>б) Первый результат — орёл в исходах ОО и ОР. Вероятность равна <span class="math-inline">\(\frac24=\frac12\).</span></p></div></details>
+<div class="problem-statement" data-task="addition-of-probabilities/problems/4" id="task-problems-4"><p><strong>4. №284</strong> В некотором опыте возможно три элементарных события: <span class="math-inline">\(a, b\)</span> и <span class="math-inline">\(c\).</span> Вероятность того, что наступит либо событие <span class="math-inline">\(a\),</span> либо событие <span class="math-inline">\(b\),</span> равна <span class="math-inline">\(0,4\);</span> вероятность того, что наступит либо событие <span class="math-inline">\(a\),</span> либо событие <span class="math-inline">\(c\),</span> равна <span class="math-inline">\(0,7\).</span> Найдите вероятность каждого из элементарных событий.</p></div><details class="solution" id="solution-addition-of-probabilities-problems-4" data-kind="task" data-for="addition-of-probabilities/problems/4"><summary aria-controls="solution-addition-of-probabilities-problems-4-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-problems-4-body"><figure class="lesson-figure"><img src="../../assets/figures/euler-284.svg" alt="Круги Эйлера: A = {a, b}, B = {a, c}; в пересечении исход a. Вероятности a, b, c равны 0,1; 0,3; 0,6." width="720" height="430"></figure><p>Положим <span class="math-inline">\(x=\mathbb P(a)\),</span> <span class="math-inline">\(y=\mathbb P(b)\),</span> <span class="math-inline">\(z=\mathbb P(c)\).</span> Разные элементарные события несовместны, поэтому</p>
+<div class="math-display">\[x+y=0,4,\qquad x+z=0,7,\qquad x+y+z=1.\]</div>
+<p>Вычитая первое равенство из третьего, получаем <span class="math-inline">\(z=0,6\).</span> Вычитая второе из третьего, получаем <span class="math-inline">\(y=0,3\).</span> Тогда <span class="math-inline">\(x=1-0,6-0,3=0,1\).</span></p>
+<p><strong>Ответ:</strong> <span class="math-inline">\(\mathbb P(a)=0,1\),</span> <span class="math-inline">\(\mathbb P(b)=0,3\),</span> <span class="math-inline">\(\mathbb P(c)=0,6\).</span></p></div></details>
+
+</div></section>
+<section class="lesson-section" id="homework" aria-labelledby="homework-title"><div class="section-heading"><span class="section-number">03</span><h2 id="homework-title">Домашнее задание</h2></div><div class="section-content"><p>Первая часть учебника, стр. 143–149. В каждой задаче надо кратко перечислить все благоприятствующие элементарные события.</p>
+<div class="problem-statement" data-task="addition-of-probabilities/homework/1" id="task-homework-1"><p><strong>1. №272</strong> В шахматной партии Андрей играет с Борисом. Вероятность выигрыша Андрея равна 0,3, вероятность ничьей равна 0,2, вероятность того, что партия не будет закончена, равна 0,1. Найдите вероятность того, что:<br> а) Андрей не проиграет;<br> б) Борис не проиграет;<br> в) никто не выиграет.</p></div><details class="solution" id="solution-addition-of-probabilities-homework-1" data-kind="task" data-for="addition-of-probabilities/homework/1"><summary aria-controls="solution-addition-of-probabilities-homework-1-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-homework-1-body"><p>Обозначим элементарные исходы: <span class="math-inline">\(a\)</span> — выиграл Андрей, <span class="math-inline">\(b\)</span> — выиграл Борис, <span class="math-inline">\(d\)</span> — ничья, <span class="math-inline">\(u\)</span> — партия не закончена. Тогда</p>
+<div class="math-display">\[\mathbb P(b)=1-0,3-0,2-0,1=0,4.\]</div>
+<p>а) Андрей не проиграл в исходах <span class="math-inline">\(a,d,u\):</span> <span class="math-inline">\(0,3+0,2+0,1=0,6\).</span></p>
+<p>б) Борис не проиграл в исходах <span class="math-inline">\(b,d,u\):</span> <span class="math-inline">\(0,4+0,2+0,1=0,7\).</span></p>
+<p>в) Никто не выиграл в исходах <span class="math-inline">\(d,u\):</span> <span class="math-inline">\(0,2+0,1=0,3\).</span></p>
+<p>Здесь незавершённая партия считается отдельным исходом: в нём ни победа, ни поражение ещё не наступили.</p></div></details>
+<div class="problem-statement" data-task="addition-of-probabilities/homework/2" id="task-homework-2"><p><strong>2. №277</strong> В лыжных гонках участвуют 13 спортсменов из России, 2 спортсмена из Норвегии и 5 спортсменов из Швеции. Порядок, в котором спортсмены стартуют, определяется жребием. Найдите вероятность того, что первым будет стартовать спортсмен из России.</p></div><details class="solution" id="solution-addition-of-probabilities-homework-2" data-kind="task" data-for="addition-of-probabilities/homework/2"><summary aria-controls="solution-addition-of-probabilities-homework-2-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-homework-2-body"><p>Всего <span class="math-inline">\(13+2+5=20\)</span> спортсменов. Элементарный исход — имя спортсмена, стартующего первым. Обозначим российских спортсменов <span class="math-inline">\(R_1,\ldots,R_{13}\):</span> именно эти 13 исходов благоприятствуют событию.</p>
+<p>Каждый спортсмен с вероятностью <span class="math-inline">\(\frac1{20}\)</span> получает первый номер, поэтому</p>
+<div class="math-display">\[\mathbb P=13\cdot\frac1{20}=\frac{13}{20}=0,65.\]</div></div></details>
+<div class="problem-statement" data-task="addition-of-probabilities/homework/3" id="task-homework-3"><p><strong>3. №282</strong> Стрелок один раз стреляет в круглую мишень (рис. 65). Вероятности попадания в зоны мишени показаны в таблице 51. Число очков, которое получает стрелок, равно номеру зоны.</p></div>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Таблица 51. Вероятности попадания в зоны мишени"><table><caption>Таблица 51. Вероятности попадания в зоны мишени</caption><tbody><tr><th scope="row">Зона</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th></tr><tr><th scope="row">Вероятность</th><td>0,001</td><td>0,002</td><td>0,004</td><td>0,006</td><td>0,021</td></tr><tr><th scope="row">Зона</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th><th scope="col">9</th><th scope="col">10</th></tr><tr><th scope="row">Вероятность</th><td>0,065</td><td>0,138</td><td>0,243</td><td>0,334</td><td>0,186</td></tr></tbody></table></div>
+<figure class="lesson-figure"><img src="../../assets/figures/target-zones.png" alt="Рисунок 65. Мишень с десятью зонами: голубые зоны 1, 5 и 9; жёлтые зоны 4 и 8" width="530" height="575"></figure>
+<p>Найдите вероятность события:<br> а) «стрелок получит меньше 5 очков»;<br> б) «стрелок получит больше 7 очков»;<br> в) «стрелок попадёт в жёлтую зону»;<br> г) «стрелок не попадёт в голубую зону».</p><details class="solution" id="solution-addition-of-probabilities-homework-3" data-kind="task" data-for="addition-of-probabilities/homework/3"><summary aria-controls="solution-addition-of-probabilities-homework-3-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-homework-3-body"><p>Элементарные исходы — попадания в зоны с номерами от 1 до 10. Суммируем вероятности нужных зон из таблицы 51.</p>
+<p>а) Меньше 5 очков: зоны <span class="math-inline">\(\{1,2,3,4\}\).</span></p>
+<div class="math-display">\[\mathbb P=0,001+0,002+0,004+0,006=0,013.\]</div>
+<p>б) Больше 7 очков: зоны <span class="math-inline">\(\{8,9,10\}\).</span></p>
+<div class="math-display">\[\mathbb P=0,243+0,334+0,186=0,763.\]</div>
+<p>в) Жёлтые зоны на рисунке — <span class="math-inline">\(\{4,8\}\).</span></p>
+<div class="math-display">\[\mathbb P=0,006+0,243=0,249.\]</div>
+<p>г) Не голубые зоны: <span class="math-inline">\(\{2,3,4,6,7,8,10\}\).</span> Сумма их вероятностей равна</p>
+<div class="math-display">\[0,002+0,004+0,006+0,065+0,138+0,243+0,186=0,644.\]</div></div></details>
+<div class="problem-statement" data-task="addition-of-probabilities/homework/4" id="task-homework-4"><p><strong>4. №283</strong> В некотором опыте возможно три элементарных события: <span class="math-inline">\(a\),</span> <span class="math-inline">\(b\)</span> и <span class="math-inline">\(c\).</span> Вероятность того, что наступит либо событие <span class="math-inline">\(b\),</span> либо событие <span class="math-inline">\(c\),</span> равна 0,83. Найдите вероятность элементарного события <span class="math-inline">\(a\).</span></p></div><details class="solution" id="solution-addition-of-probabilities-homework-4" data-kind="task" data-for="addition-of-probabilities/homework/4"><summary aria-controls="solution-addition-of-probabilities-homework-4-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-homework-4-body"><p>Искомому событию благоприятствует единственный элементарный исход <span class="math-inline">\(a\).</span> События <span class="math-inline">\(a,b,c\)</span> образуют всё пространство исходов, поэтому</p>
+<div class="math-display">\[\mathbb P(a)=1-\mathbb P(\{b,c\})=1-0,83=0,17.\]</div></div></details>
+<div class="problem-statement" data-task="addition-of-probabilities/homework/5" id="task-homework-5"><p><strong>5. №285</strong> Бросают одну игральную кость. Найдите вероятность события:<br> а) «выпадет чётное число очков»;<br> б) «выпадет число очков, кратное 3»;<br> в) «выпадет больше 3 очков»;<br> г) «выпадет число очков, кратное 7».</p></div><details class="solution" id="solution-addition-of-probabilities-homework-5" data-kind="task" data-for="addition-of-probabilities/homework/5"><summary aria-controls="solution-addition-of-probabilities-homework-5-body">Показать разбор</summary><div class="solution-body" id="solution-addition-of-probabilities-homework-5-body"><p>Элементарные исходы — числа <span class="math-inline">\(1,2,3,4,5,6\),</span> каждый имеет вероятность <span class="math-inline">\(\frac16\).</span></p>
+<p>а) Благоприятствующие исходы <span class="math-inline">\(\{2,4,6\}\):</span> <span class="math-inline">\(\mathbb P=\frac36=\frac12\).</span></p>
+<p>б) Благоприятствующие исходы <span class="math-inline">\(\{3,6\}\):</span> <span class="math-inline">\(\mathbb P=\frac26=\frac13\).</span></p>
+<p>в) Благоприятствующие исходы <span class="math-inline">\(\{4,5,6\}\):</span> <span class="math-inline">\(\mathbb P=\frac36=\frac12\).</span></p>
+<p>г) Среди чисел от 1 до 6 нет кратных 7. Благоприятствующих исходов нет, поэтому вероятность равна 0.</p></div></details>
+
+</div></section></div>
+    <aside class="lesson-sidebar">
+      <details class="page-toc" open>
+        <summary>На этой странице</summary>
+        <nav class="toc-links" aria-label="Оглавление темы"><p class="toc-title">На этой странице</p><div class="toc-group"><a class="toc-section" href="#theory">Теория</a><a class="toc-item" href="#theory-subtopic-1">Сложение вероятностей</a><a class="toc-item" href="#theorem-1">Формула сложения вероятностей</a><a class="toc-item" href="#task-example">Пример (объединение и пересечение событий)</a><a class="toc-item" href="#task-exercise">Упражнение</a><a class="toc-item" href="#theorem-2">Формула сложения вероятностей несовместных событий</a><a class="toc-item" href="#theory-subtopic-2">Благоприятствующие события</a><a class="toc-item" href="#theorem-3">Вероятность события</a></div><div class="toc-group"><a class="toc-section" href="#problems">Задачи</a><a class="toc-item" href="#task-problems-1">1. №273</a><a class="toc-item" href="#task-problems-2">2. №275</a><a class="toc-item" href="#task-problems-3">3. №280</a><a class="toc-item" href="#task-problems-4">4. №284</a></div><div class="toc-group"><a class="toc-section" href="#homework">Домашнее задание</a><a class="toc-item" href="#task-homework-1">1. №272</a><a class="toc-item" href="#task-homework-2">2. №277</a><a class="toc-item" href="#task-homework-3">3. №282</a><a class="toc-item" href="#task-homework-4">4. №283</a><a class="toc-item" href="#task-homework-5">5. №285</a></div></nav>
+      </details>
+    </aside>
+  </div>
+  <nav class="topic-pagination" aria-label="Переходы между темами"><a class="pagination-link previous" href="../random-events/index.html"><span>← Предыдущая тема</span><strong>Случайные события и вероятность элементарных событий</strong></a><a class="pagination-link next" href="../equally-likely-outcomes/index.html"><span>Следующая тема →</span><strong>Равновозможные исходы и противоположные события</strong></a></nav>
+</main>
+
+  <footer class="site-footer"><span>Теория вероятностей · 9 класс</span><span>5 тем</span></footer>
+</body>
+</html>

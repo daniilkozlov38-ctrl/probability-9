@@ -1,0 +1,73 @@
+.section-content{font-size:18px;line-height:1.8}
+.section-content p{margin:0 0 21px}
+.section-content h3{font-size:23px;line-height:1.4;font-weight:500;letter-spacing:-.4px;margin:38px 0 24px}
+.section-content h3:first-child{margin-top:0}
+.lesson-box{padding:22px 25px;margin:25px 0;border:1px solid #e9d6c4;border-left:3px solid #cba07b;border-radius:4px 12px 12px 4px;background:#fffdf9}
+.lesson-box.theorem{background:#fceee1}
+.lesson-box.designation{background:#faf0e6;border-left-color:#d0ae90}
+.lesson-box p:last-child{margin-bottom:0}
+.lesson-box strong{font-weight:600}
+.lesson-list{padding-left:24px;margin:17px 0 0}
+.lesson-list li{padding-left:7px;margin:14px 0}
+.lesson-list li p{margin:0}
+.problem-statement{padding:24px 0 5px;margin:18px 0 0;border-top:1px solid var(--line)}
+.problem-statement:first-child{border-top:0;padding-top:0}
+.problem-statement strong{font-weight:600}
+.solution{border:1px solid #e7d4c3;border-radius:11px;background:#fffdfa;margin:4px 0 32px;overflow:hidden}
+.solution summary{cursor:pointer;padding:15px 20px;font-size:14px;line-height:1.5;color:var(--accent);user-select:none}
+.solution summary:hover{background:#f9ebde}
+.solution summary:focus-visible{outline:3px solid var(--focus);outline-offset:-4px}
+.solution[open]>summary{border-bottom:1px solid #ecdfd3;background:#faf0e6}
+.solution-body{padding:22px 25px;font-size:17px;line-height:1.85}
+.solution-body p:last-child{margin-bottom:0}
+.solution-body .problem-statement{border:0;padding:0}
+.math-inline{display:inline-block;vertical-align:middle;max-width:100%;overflow-x:auto;overflow-y:hidden;padding:3px 1px;line-height:1.5;white-space:nowrap}
+.math-display{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:15px 0;line-height:1.5}
+.math-display mjx-container[display=true]{margin:.7em 0!important}
+.math-inline mjx-container{margin:0!important}
+.lesson-figure{margin:30px auto;text-align:center}
+.lesson-figure img{display:block;margin:auto;width:auto;max-width:min(100%,500px);max-height:490px;object-fit:contain;background:white;border-radius:10px}
+.table-scroll{max-width:100%;overflow:auto;margin:25px 0 30px;border:1px solid var(--line);border-radius:10px;background:#fffdfa}
+.table-scroll table{border-collapse:collapse;width:100%;min-width:540px;font-size:15px;line-height:1.6}
+.table-scroll caption{padding:16px 18px;text-align:left;color:var(--muted);font-size:13px;background:#faf0e6;border-bottom:1px solid var(--line)}
+.table-scroll th,.table-scroll td{padding:13px 14px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-weight:400;white-space:nowrap}
+.table-scroll th:first-child{text-align:left;font-size:13px;background:#fcf4ed}
+.table-scroll tr:last-child>*{border-bottom:0}
+.table-scroll tr>*:last-child{border-right:0}
+.source-reference{font-size:12px;color:var(--muted);line-height:1.6;margin-top:30px}
+@media(max-width:760px){
+  .section-content{font-size:17px;line-height:1.8}.section-content h3{font-size:21px}
+  .lesson-box{padding:18px 17px;margin:22px 0}.lesson-list{padding-left:19px}.lesson-list li{padding-left:3px}
+  .solution summary{padding:14px 16px;font-size:13px}.solution-body{padding:18px 16px;font-size:16px}
+  .math-display{margin:12px 0}.lesson-figure{margin:24px 0}.table-scroll table{font-size:13px}
+  .table-scroll th,.table-scroll td{padding:12px 10px}
+}
+@media print{.solution:not([open])>.solution-body{display:block}.solution summary{color:var(--ink)}.table-scroll,.math-inline,.math-display{overflow:visible}}
+
+/* Page contents beside the lesson, with the original reading width retained. */
+.topic-main{max-width:1220px}
+.lesson-layout{display:grid;grid-template-columns:minmax(0,840px) 220px;gap:40px;align-items:start}
+.lesson-content{min-width:0}
+.lesson-sidebar{position:sticky;top:92px;padding-top:36px;max-height:calc(100vh - 110px);overflow:auto;scrollbar-width:thin}
+.page-toc{border-left:1px solid var(--line);padding-left:20px}
+.page-toc>summary{display:none}
+.toc-title{font-size:12px;letter-spacing:.4px;color:var(--muted);margin:0 0 18px}
+.toc-group{margin-bottom:20px}
+.toc-links a{display:block;font-size:13px;line-height:1.55;padding:5px 8px;border-radius:6px;color:var(--muted)}
+.toc-links .toc-section{font-weight:600;color:var(--ink);margin-bottom:4px}
+.toc-links .toc-item{padding-left:18px}
+.toc-links a:hover{background:#faecdf;color:var(--accent)}
+.toc-links a[aria-current]{background:#f7e3d0;color:#905c3c}
+[data-task],[data-claim]{scroll-margin-top:100px}
+@media(max-width:1099px){
+  .topic-main{max-width:920px}
+  .lesson-layout{display:flex;flex-direction:column;gap:0}
+  .lesson-content,.lesson-sidebar{width:100%}
+  .lesson-sidebar{order:-1;position:static;padding:20px 0 0;max-height:none;overflow:visible}
+  .page-toc{border:1px solid var(--line);border-radius:10px;padding:0;background:#fffdf9}
+  .page-toc>summary{display:list-item;cursor:pointer;padding:14px 18px;font-size:13px;color:var(--accent)}
+  .toc-links{padding:8px 16px;max-height:45vh;overflow:auto}
+  .toc-title{display:none}
+}
+@media print{.lesson-sidebar{display:none}.lesson-layout{display:block}}
+.lesson-content h3[id]{scroll-margin-top:100px}
