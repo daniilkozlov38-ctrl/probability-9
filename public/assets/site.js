@@ -1,4 +1,26 @@
 (() => {
+  for (const task of document.querySelectorAll('[data-task][id]')) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = 'Скопировать ссылку';
+    button.setAttribute('aria-label', `Скопировать ссылку: ${task.querySelector('strong')?.textContent || 'задание'}`);
+    button.style.cssText = 'display:block;margin:8px 0 16px;padding:5px 0;border:0;background:transparent;color:var(--accent);font-size:12px;text-align:left';
+    const status = document.createElement('span');
+    status.setAttribute('role', 'status');
+    status.style.cssText = 'font-size:12px;color:var(--muted)';
+    task.append(button, status);
+    button.addEventListener('click', async () => {
+      const url = new URL(location.href);
+      url.hash = task.id;
+      try {
+        await navigator.clipboard.writeText(url.href);
+        status.textContent = 'Ссылка скопирована';
+        setTimeout(() => { status.textContent = ''; }, 2500);
+      } catch {
+        window.prompt('Скопируйте ссылку на задание:', url.href);
+      }
+    });
+  }
   const sectionNav = document.querySelector('.section-nav');
   if (sectionNav) {
     const links = Array.from(sectionNav.querySelectorAll('a'));
