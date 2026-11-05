@@ -1,9 +1,9 @@
 (() => {
-  for (const task of document.querySelectorAll('[data-task][id]')) {
+  for (const task of document.querySelectorAll('[data-task][id], [data-theory-block][id]')) {
     const button = document.createElement('button');
     button.type = 'button';
     button.textContent = 'Скопировать ссылку';
-    button.setAttribute('aria-label', `Скопировать ссылку: ${task.querySelector('strong')?.textContent || 'задание'}`);
+    button.setAttribute('aria-label', `Скопировать ссылку: ${task.getAttribute('data-theory-block') || task.querySelector('strong')?.textContent || 'задание'}`);
     button.style.cssText = 'display:block;margin:8px 0 16px;padding:5px 0;border:0;background:transparent;color:var(--accent);font-size:12px;text-align:left';
     const status = document.createElement('span');
     status.setAttribute('role', 'status');
@@ -17,7 +17,7 @@
         status.textContent = 'Ссылка скопирована';
         setTimeout(() => { status.textContent = ''; }, 2500);
       } catch {
-        window.prompt('Скопируйте ссылку на задание:', url.href);
+        window.prompt('Скопируйте ссылку на этот блок:', url.href);
       }
     });
   }

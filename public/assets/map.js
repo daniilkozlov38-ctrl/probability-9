@@ -18,7 +18,19 @@
     const b=bounds(),p=mobile.matches?28:48;
     camera.scale=Math.max(.2,Math.min((stage.clientWidth-p*2)/b.w,(stage.clientHeight-p*2)/b.h,1.15));
     camera.x=(stage.clientWidth-b.w*camera.scale)/2-b.x*camera.scale;
-    camera.y=(stage.clientHeight-b.h*camera.scale)/2-b.y*camera.scale;paint();
+    camera.y=(stage.clientHeight-b.h*camera.scale)/2-b.y*camera.scale;
+    if(!mobile.matches){
+      const panel=document.querySelector('.map-panel').getBoundingClientRect();let shift=0;
+      for(const n of nodes){
+        const left=camera.x+n.offsetLeft*camera.scale,top=camera.y+n.offsetTop*camera.scale;
+        if(top<panel.bottom+12&&top+n.offsetHeight*camera.scale>panel.top-12&&left<panel.right+16&&left+n.offsetWidth*camera.scale>panel.left-12)shift=Math.max(shift,panel.right+16-left);
+      }
+      if(shift){
+        if(camera.x+(b.x+b.w)*camera.scale+shift<=stage.clientWidth-24)camera.x+=shift;
+        else {camera.scale=Math.max(.2,Math.min((stage.clientWidth-panel.right-40)/b.w,(stage.clientHeight-p*2)/b.h,1.15));camera.x=panel.right+16-b.x*camera.scale;camera.y=(stage.clientHeight-b.h*camera.scale)/2-b.y*camera.scale;}
+      }
+    }
+    paint();
   }
   function startView(){
     if(!mobile.matches){fit();return;}
@@ -30,13 +42,13 @@
     const next=Math.min(2.2,Math.max(.2,camera.scale*factor)),r=next/camera.scale;
     camera.x=x-(x-camera.x)*r;camera.y=y-(y-camera.y)*r;camera.scale=next;paint();
   }
-  function anchor(n,p){const x=n.offsetLeft,y=n.offsetTop,style=getComputedStyle(n),w=Number.parseFloat(style.width),h=Number.parseFloat(style.height);return p==='left'?[x,y+h/2]:p==='right'?[x+w,y+h/2]:p==='top'?[x+w/2,y]:[x+w/2,y+h];}
+  function anchor(n,p,position=.5){const x=n.offsetLeft,y=n.offsetTop,style=getComputedStyle(n),w=Number.parseFloat(style.width),h=Number.parseFloat(style.height);return p==='left'?[x,y+h*position]:p==='right'?[x+w,y+h*position]:p==='top'?[x+w*position,y]:[x+w*position,y+h];}
   function draw(){
     cancelAnimationFrame(drawing);drawing=requestAnimationFrame(()=>{
       if(list)return;paths.replaceChildren();
       for(const e of edges){
         const fp=mobile.matches?'bottom':e.fromPort,tp=mobile.matches?'top':e.toPort;
-        const a=anchor(nodeMap.get(e.from),fp),b=anchor(nodeMap.get(e.to),tp),u=ports[fp],v=ports[tp],end=[b[0]+v[0]*4,b[1]+v[1]*4];
+        const a=anchor(nodeMap.get(e.from),fp,mobile.matches?.5:(e.fromPosition??.5)),b=anchor(nodeMap.get(e.to),tp),u=ports[fp],v=ports[tp],end=[b[0]+v[0]*4,b[1]+v[1]*4];
         const bend=Math.min(170,Math.max(45,Math.hypot(b[0]-a[0],b[1]-a[1])*.42));
         const line=document.createElementNS('http://www.w3.org/2000/svg','path');line.dataset.from=e.from;line.dataset.to=e.to;
         line.setAttribute('d',`M ${a[0]} ${a[1]} C ${a[0]+u[0]*bend} ${a[1]+u[1]*bend}, ${end[0]+v[0]*bend} ${end[1]+v[1]*bend}, ${end[0]} ${end[1]}`);

@@ -71,3 +71,11 @@
 }
 @media print{.lesson-sidebar{display:none}.lesson-layout{display:block}}
 .lesson-content h3[id]{scroll-margin-top:100px}
+[data-theory-block]{scroll-margin-top:100px}
+.theory-reference-group{border:1px solid var(--line);border-radius:11px;background:#fffdf9;margin:14px 0;overflow:hidden}
+.theory-reference-group>summary{cursor:pointer;padding:18px 20px;font-size:16px;font-weight:500;color:var(--accent);line-height:1.5}
+.theory-reference-group[open]>summary{background:#fcf0e4;border-bottom:1px solid var(--line)}
+.theory-reference-list{margin:0;padding:16px 26px 20px 40px;font-size:15px;line-height:1.65}
+.theory-reference-list li{margin:9px 0;padding-left:3px}
+.theory-reference-list a{text-decoration:underline;text-decoration-color:#d2ad8d;text-underline-offset:4px}
+.theory-reference-list a:hover{color:var(--accent)}
