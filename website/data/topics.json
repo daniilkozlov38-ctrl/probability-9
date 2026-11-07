@@ -1,0 +1,105 @@
+{
+  "site": {
+    "title": "Теория вероятностей · 9 класс",
+    "subject": "Теория вероятностей",
+    "class": "9 класс"
+  },
+  "topics": [
+    {
+      "id": "random-events",
+      "title": "Случайные события и вероятность элементарных событий",
+      "order": 1,
+      "sourceFiles": [
+        "2.chance_events_probability_of_elementary_events.tex"
+      ],
+      "x": 150,
+      "y": 420
+    },
+    {
+      "id": "addition-of-probabilities",
+      "title": "Сложение вероятностей",
+      "order": 2,
+      "sourceFiles": [
+        "3_sum_of_probabilities.tex"
+      ],
+      "x": 590,
+      "y": 140
+    },
+    {
+      "id": "equally-likely-outcomes",
+      "title": "Равновозможные исходы и противоположные события",
+      "order": 3,
+      "sourceFiles": [
+        "4_equally_possible_events.tex",
+        "4_handout.tex"
+      ],
+      "x": 1040,
+      "y": 390,
+      "hasHomework": false
+    },
+    {
+      "id": "conditional-probability",
+      "title": "Условная вероятность",
+      "order": 4,
+      "sourceFiles": [
+        "5_conditional_probability.tex",
+        "5_handout.tex"
+      ],
+      "x": 640,
+      "y": 680
+    },
+    {
+      "id": "independent-events",
+      "title": "Независимость событий",
+      "order": 5,
+      "sourceFiles": [
+        "6_independence.tex"
+      ],
+      "x": 160,
+      "y": 650
+    },
+    {
+      "id": "problem-solving-practice",
+      "title": "Практика решения задач",
+      "order": 6,
+      "sourceFiles": [
+        "7_practice.tex"
+      ],
+      "x": 610,
+      "y": 980
+    }
+  ],
+  "edges": [
+    {
+      "from": "random-events",
+      "to": "addition-of-probabilities",
+      "fromPort": "right",
+      "toPort": "left"
+    },
+    {
+      "from": "addition-of-probabilities",
+      "to": "equally-likely-outcomes",
+      "fromPort": "right",
+      "toPort": "top"
+    },
+    {
+      "from": "equally-likely-outcomes",
+      "to": "conditional-probability",
+      "fromPort": "bottom",
+      "toPort": "right"
+    },
+    {
+      "from": "conditional-probability",
+      "to": "independent-events",
+      "fromPort": "left",
+      "toPort": "right"
+    },
+    {
+      "from": "independent-events",
+      "to": "problem-solving-practice",
+      "fromPort": "right",
+      "toPort": "left",
+      "fromPosition": 0.8
+    }
+  ]
+}

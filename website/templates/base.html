@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf5">
+  <meta name="description" content="{{description}}">
+  <title>{{pageTitle}}</title>
+  <link rel="icon" href="{{root}}assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{root}}assets/styles.css">
+  <script src="{{root}}assets/site.js" defer></script>
+  {{pageAssets}}
+</head>
+<body class="{{bodyClass}}">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{root}}index.html" aria-label="{{siteTitle}} — на главную">
+        <svg class="brand-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M11 12h18M11 12l9 17m9-17-9 17" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="11" cy="12" r="4" fill="currentColor"/>
+          <circle cx="29" cy="12" r="4" fill="currentColor"/>
+          <circle cx="20" cy="29" r="4" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">{{subject}}<span class="brand-class">{{class}}</span></span>
+      </a>
+      <a class="header-map-link" href="{{root}}index.html" aria-label="Карта курса" {{mapCurrent}}>{{mapIcon}}<span>Карта курса</span></a>
+    </div>
+  </header>
+  {{body}}
+  <footer class="site-footer"><span>{{siteTitle}}</span><span>{{topicCount}} тем</span></footer>
+</body>
+</html>

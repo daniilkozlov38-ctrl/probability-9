@@ -1,0 +1,302 @@
+[
+  {
+    "id": "random-events",
+    "title": "Случайные события и вероятность элементарных событий",
+    "blocks": [
+      {
+        "id": "theory-subtopic-1",
+        "label": "Случайные события",
+        "heading": true
+      },
+      {
+        "id": "theory-block-2",
+        "label": "Элементарное событие",
+        "heading": false
+      },
+      {
+        "id": "theory-block-3",
+        "label": "!Результатом случайного опыта всегда является только одно элементарное событие",
+        "heading": false
+      },
+      {
+        "id": "theory-block-4",
+        "label": "Множество элементарных событий",
+        "heading": false
+      },
+      {
+        "id": "theory-block-5",
+        "label": "Множество элементарных событий — обозначение",
+        "heading": false
+      },
+      {
+        "id": "theory-block-6",
+        "label": "Случайное событие",
+        "heading": false
+      },
+      {
+        "id": "theory-block-7",
+        "label": "Пустое событие",
+        "heading": false
+      },
+      {
+        "id": "theory-block-8",
+        "label": "Невозможное",
+        "heading": false
+      },
+      {
+        "id": "theory-block-9",
+        "label": "Достоверное событие",
+        "heading": false
+      },
+      {
+        "id": "theory-subtopic-2",
+        "label": "Противоположные события",
+        "heading": true
+      },
+      {
+        "id": "theory-block-11",
+        "label": "Случайные события будем обозначать большими латинскими буквами. Пусть нам дано некоторое случайное событие …",
+        "heading": false
+      },
+      {
+        "id": "theory-block-12",
+        "label": "Противоположным событием",
+        "heading": false
+      },
+      {
+        "id": "theory-block-13",
+        "label": "Противоположное событие — обозначение",
+        "heading": false
+      },
+      {
+        "id": "theory-block-14",
+        "label": "взаимнопротивоположными",
+        "heading": false
+      },
+      {
+        "id": "theory-block-15",
+        "label": "Событие A и противоположное событие в пространстве исходов",
+        "heading": false
+      },
+      {
+        "id": "theory-subtopic-3",
+        "label": "Вероятность случайного события",
+        "heading": true
+      },
+      {
+        "id": "theory-block-17",
+        "label": "Вероятность",
+        "heading": false
+      },
+      {
+        "id": "theory-block-18",
+        "label": "Вероятность — обозначение",
+        "heading": false
+      },
+      {
+        "id": "theory-block-19",
+        "label": "Для тех кому интересно, ниже более формальное определение вероятности (учить аксиомы не нужно)",
+        "heading": false
+      },
+      {
+        "id": "theory-block-20",
+        "label": "Вероятность (вероятностная мера)",
+        "heading": false
+      },
+      {
+        "id": "theorem-1",
+        "label": "Аксиомы вероятности",
+        "heading": false
+      },
+      {
+        "id": "theory-block-22",
+        "label": "несовместных событий",
+        "heading": false
+      },
+      {
+        "id": "theory-subtopic-4",
+        "label": "Вероятность элементарного события и равновозможные события",
+        "heading": true
+      },
+      {
+        "id": "theory-block-24",
+        "label": "Почти всегда в школе мы будем обсуждать случаи, когда множество элементарных событий будет конечным",
+        "heading": false
+      },
+      {
+        "id": "theorem-2",
+        "label": "Сумма вероятностей всех элементарных событий равна …",
+        "heading": false
+      },
+      {
+        "id": "theory-block-26",
+        "label": "равновозможными элементарными событиями",
+        "heading": false
+      },
+      {
+        "id": "theorem-3",
+        "label": "При опыте с … равновозможными элементарными событиями вероятность каждого элементарного события равна …",
+        "heading": false
+      }
+    ]
+  },
+  {
+    "id": "addition-of-probabilities",
+    "title": "Сложение вероятностей",
+    "blocks": [
+      {
+        "id": "theory-subtopic-1",
+        "label": "Сложение вероятностей",
+        "heading": true
+      },
+      {
+        "id": "theory-block-2",
+        "label": "конечного",
+        "heading": false
+      },
+      {
+        "id": "theorem-1",
+        "label": "Формула сложения вероятностей",
+        "heading": false
+      },
+      {
+        "id": "theory-block-4",
+        "label": "Несовместными",
+        "heading": false
+      },
+      {
+        "id": "theorem-2",
+        "label": "Формула сложения вероятностей несовместных событий",
+        "heading": false
+      },
+      {
+        "id": "theory-subtopic-2",
+        "label": "Благоприятствующие события",
+        "heading": true
+      },
+      {
+        "id": "theory-block-7",
+        "label": "благоприятствующими событиями событию",
+        "heading": false
+      },
+      {
+        "id": "theory-block-8",
+        "label": "Теперь мы, зная вероятности элементарных исходов можем вычислять вероятности любых событий. Очевидно, что р…",
+        "heading": false
+      },
+      {
+        "id": "theorem-3",
+        "label": "Вероятность события",
+        "heading": false
+      }
+    ]
+  },
+  {
+    "id": "equally-likely-outcomes",
+    "title": "Равновозможные исходы и противоположные события",
+    "blocks": [
+      {
+        "id": "theory-subtopic-1",
+        "label": "Опыты с равновозможными элементарными исходами",
+        "heading": true
+      },
+      {
+        "id": "theory-block-2",
+        "label": "равновозможными",
+        "heading": false
+      },
+      {
+        "id": "theorem-1",
+        "label": "Вероятность события",
+        "heading": false
+      },
+      {
+        "id": "theory-subtopic-2",
+        "label": "Вероятность противоположных событий",
+        "heading": true
+      },
+      {
+        "id": "theory-block-5",
+        "label": "Так как объединение взаимнопротивоположных событий — это достоверное событие, мы можем сделать следующий вывод",
+        "heading": false
+      },
+      {
+        "id": "theorem-2",
+        "label": "Сумма вероятностей взаимнопротивоположных событий равна …. …",
+        "heading": false
+      },
+      {
+        "id": "theory-block-7",
+        "label": "Как следствие …",
+        "heading": false
+      }
+    ]
+  },
+  {
+    "id": "conditional-probability",
+    "title": "Условная вероятность",
+    "blocks": [
+      {
+        "id": "theory-subtopic-1",
+        "label": "Определение",
+        "heading": true
+      },
+      {
+        "id": "theory-block-2",
+        "label": "Чтобы решить пункт б) нам пришлось изменять пространство элементарных исходов, что часто бывает неудобно. Н…",
+        "heading": false
+      },
+      {
+        "id": "theory-block-3",
+        "label": "Вероятность наступления события … при условии того, что наступило событие … обозначаем … — обозначение",
+        "heading": false
+      },
+      {
+        "id": "theory-block-4",
+        "label": "Условная вероятность",
+        "heading": false
+      },
+      {
+        "id": "theory-block-5",
+        "label": "Иногда наоборот мы можем легко вычислить условную вероятность и нам требуется вычислить вероятность наступл…",
+        "heading": false
+      },
+      {
+        "id": "theorem-1",
+        "label": "Формула умножения вероятностей",
+        "heading": false
+      }
+    ]
+  },
+  {
+    "id": "independent-events",
+    "title": "Независимость событий",
+    "blocks": [
+      {
+        "id": "theory-subtopic-1",
+        "label": "Определение",
+        "heading": true
+      },
+      {
+        "id": "theory-block-2",
+        "label": "На человеческом языке события называются независимыми, если вероятность наступления первого события не зави…",
+        "heading": false
+      },
+      {
+        "id": "theory-block-3",
+        "label": "независимыми",
+        "heading": false
+      },
+      {
+        "id": "theory-block-4",
+        "label": "независимыми",
+        "heading": false
+      },
+      {
+        "id": "theorem-1",
+        "label": "Если … и … независимы, то каждая из следующих пар событий тоже независима: …",
+        "heading": false
+      }
+    ]
+  }
+]

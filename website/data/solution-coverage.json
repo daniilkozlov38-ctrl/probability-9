@@ -1,0 +1,381 @@
+{
+  "counts": {
+    "task": 64,
+    "theorem": 9,
+    "axioms": 1
+  },
+  "givenDisclosures": 1,
+  "totalDisclosures": 77,
+  "items": [
+    {
+      "key": "random-events/theorem/1",
+      "type": "axioms",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/theorem/2",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/theorem/3",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/problems/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/problems/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/problems/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/homework/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/homework/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/homework/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "random-events/homework/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/theory/example",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/theory/exercise",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/theorem/1",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/theorem/2",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/theorem/3",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/problems/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/problems/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/problems/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/problems/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/homework/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/homework/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/homework/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/homework/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "addition-of-probabilities/homework/5",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/theorem/1",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/theorem/2",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/5",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/6",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/7",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/8",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/9",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/10",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/11",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "equally-likely-outcomes/problems/12",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/theory/1",
+      "type": "task",
+      "disclosures": 2
+    },
+    {
+      "key": "conditional-probability/theory/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/theorem/1",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/problems/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/problems/2",
+      "type": "task",
+      "disclosures": 2
+    },
+    {
+      "key": "conditional-probability/problems/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/homework/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/homework/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/homework/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/homework/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "conditional-probability/homework/5",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/theory/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/theory/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/theory/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/theorem/1",
+      "type": "theorem",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/problems/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/problems/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/problems/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/problems/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/problems/5",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/problems/6",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/homework/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/homework/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/homework/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "independent-events/homework/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/problems/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/problems/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/problems/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/problems/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/problems/5",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/problems/6",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/homework/1",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/homework/2",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/homework/3",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/homework/4",
+      "type": "task",
+      "disclosures": 1
+    },
+    {
+      "key": "problem-solving-practice/homework/5",
+      "type": "task",
+      "disclosures": 1
+    }
+  ]
+}

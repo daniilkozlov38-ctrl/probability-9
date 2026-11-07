@@ -1,0 +1,20 @@
+<main class="topic-main" id="main">
+  <nav class="breadcrumb" aria-label="Путь к теме"><a href="{{root}}index.html">Карта курса</a><span aria-hidden="true">/</span><span>Тема {{number}}</span></nav>
+  <div class="topic-intro">
+    <p class="eyebrow">Тема {{number}}</p>
+    <h1>{{topicTitle}}</h1>
+  </div>
+  <nav class="section-nav" aria-label="Разделы темы">
+    {{sectionLinks}}
+  </nav>
+  <div class="lesson-layout">
+    <div class="lesson-content">{{sections}}</div>
+    <aside class="lesson-sidebar">
+      <details class="page-toc" open>
+        <summary>На этой странице</summary>
+        <nav class="toc-links" aria-label="Оглавление темы"><p class="toc-title">На этой странице</p>{{tocLinks}}</nav>
+      </details>
+    </aside>
+  </div>
+  <nav class="topic-pagination" aria-label="Переходы между темами">{{previous}}{{next}}</nav>
+</main>

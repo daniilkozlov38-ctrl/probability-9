@@ -1,0 +1,26 @@
+<main class="map-page" id="main">
+  <section class="map-panel" aria-labelledby="page-title">
+    <div class="map-panel-title"><h1 id="page-title">Карта курса</h1><span>{{topicCount}} тем</span></div>
+    <p>Темы в порядке наших занятий</p>
+    <div class="view-switch" role="group" aria-label="Вид списка тем" hidden>
+      <button type="button" data-view="graph" aria-pressed="true">{{mapIcon}}Граф</button>
+      <button type="button" data-view="list" aria-pressed="false">{{listIcon}}Список</button>
+    </div>
+  </section>
+  <div class="course-stage" tabindex="0" role="region" aria-label="Карта тем. Перемещение мышью или стрелками клавиатуры; плюс и минус меняют масштаб, 0 показывает всю карту.">
+    <div class="map-world" data-edges="{{edges}}">
+      <svg class="map-connections" viewBox="0 0 1500 1000" aria-hidden="true" focusable="false">
+        <defs><marker id="arrowhead" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M2 2L10 6L2 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <g class="connection-paths"></g>
+      </svg>
+      <ol class="topic-cards">{{cards}}</ol>
+    </div>
+  </div>
+  <div class="map-controls" role="group" aria-label="Масштаб карты" hidden>
+    <button type="button" data-map-control="zoom-in" aria-label="Приблизить карту" title="Приблизить">+</button>
+    <output class="map-scale" aria-label="Текущий масштаб">100%</output>
+    <button type="button" data-map-control="zoom-out" aria-label="Отдалить карту" title="Отдалить">−</button>
+    <button type="button" class="fit-map" data-map-control="fit" aria-label="Показать всю карту" title="Показать всю карту">{{fitIcon}}</button>
+  </div>
+  <p class="map-help">Перемещайте карту · Меняйте масштаб кнопками <span aria-hidden="true">+ / −</span></p>
+</main>
