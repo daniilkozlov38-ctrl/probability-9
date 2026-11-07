@@ -26,13 +26,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Restore shared binary assets
-        run: |
-          mkdir -p website/assets
-          cp -R public/assets/vendor website/assets/
-          cp -R public/assets/figures website/assets/
+      - name: Test LaTeX authoring
+        run: python3 website/scripts/test-authoring.py
       - name: Build from lesson sources
         run: node website/scripts/build.mjs
+      - name: Validate pages and links
+        run: python3 website/scripts/verify-site.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

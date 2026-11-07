@@ -13,7 +13,7 @@ def watch():
  while True:
   time.sleep(1);current=snapshot()
   if current!=previous:
-   build();previous=snapshot();print('Обновите страницу в браузере.',flush=True)
+   success=build();previous=snapshot();print('Обновите страницу в браузере.' if success else 'Ошибка: исправьте исходник; предыдущая версия сохранена.',flush=True)
 if not build():sys.exit(1)
 threading.Thread(target=watch,daemon=True).start()
 server=ThreadingHTTPServer(('127.0.0.1',4173),partial(SimpleHTTPRequestHandler,directory=str(ROOT/'dist')))

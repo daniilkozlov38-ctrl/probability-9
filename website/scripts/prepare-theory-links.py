@@ -14,7 +14,7 @@ def main():
  catalog=[]
  for topic in topics:
   if topic['id']=='problem-solving-practice':continue
-  root=parse_fragment((ROOT/'content'/topic['id']/'theory.html').read_text())
+  root=parse_fragment((ROOT/'.generated/content'/topic['id']/'theory.html').read_text())
   blocks=[];heading=0;serial=0
   for n in root.children:
    if not isinstance(n,Element):continue
@@ -38,7 +38,7 @@ def main():
   link=Element('a',{'href':f'../{topic["id"]}/index.html#theory'},['Теория'])
   index.append(Element('li',children=[topic['title']+' | ',link]).render())
  index=['<ul class="theory-reference-list">'+''.join(index)+'</ul>']
- path=ROOT/'content/problem-solving-practice/theory.html'
+ path=ROOT/'.generated/content/problem-solving-practice/theory.html'
  if path.exists():
   html=path.read_text().replace('<div data-theory-index="all"></div>','\n'.join(index))
   (output/'problem-solving-practice.html').write_text(html)

@@ -1,0 +1,176 @@
+% Единственный источник содержания темы. UTF-8.
+% Метки label и ключи в [...] сохраняют опубликованные ссылки.
+
+\section{Теория}
+
+\subsection{Опыты с равновозможными элементарными исходами}
+
+Как мы уже доказали, в опытах с $N$ \textbf{равновозможными} элементарными событиями вероятность каждого элементарного события равна $\frac{1}{N}$. Вероятность случайного события  —  сумма вероятностей благоприятствующих ему событий.
+
+\begin{theorem}[equally-likely-outcomes/theorem/1]\label{theorem-1}
+\textbf{Вероятность события} $A$ в опыте с равновозможными элементарными исходами.\\
+ $\mathbb{P}(A) = \frac{N(A)}{N}$, где $N$  —  общее число элементарных исходов, $N(A)$ или $N_A$  —  число благоприятствующих этому событию элементарных исходов.
+\end{theorem}
+
+\begin{proof}[equally-likely-outcomes/theorem/1]\label{solution-equally-likely-outcomes-theorem-1}
+\textbf{Доказательство. [не надо учить]} Из сказанного выше, если $A= \{a_1,a_2,\dots,a_{N(A)}\}$, то $\mathbb{P}(A) = \mathbb{P}(a_1) + \mathbb{P}(a_2) + \dots + \mathbb{P}(a_{N_A}) =\underbrace{\frac{1}{N} + \frac{1}{N} + \dots + \frac{1}{N}}_{N_A}  = \frac{N_A}{N}$
+\end{proof}
+
+\subsection{Вероятность противоположных событий}
+
+Так как объединение взаимнопротивоположных событий  —  это достоверное событие, мы можем сделать следующий вывод:
+
+\begin{theorem}[equally-likely-outcomes/theorem/2]\label{theorem-2}
+Сумма вероятностей взаимнопротивоположных событий равна $1$. $\mathbb{P}(A) + \mathbb{P}(\overline{A}) = 1$
+\end{theorem}
+
+\begin{proof}[equally-likely-outcomes/theorem/2]\label{solution-equally-likely-outcomes-theorem-2}
+События $A$ и $\overline A$ несовместны и в объединении дают $\Omega$. Поэтому
+
+\[\mathbb P(A)+\mathbb P(\overline A)=\mathbb P(A\cup\overline A)=\mathbb P(\Omega)=1.\]
+
+Вычитая одну из вероятностей из 1, получаем обе записанные в конспекте формулы для противоположного события.
+\end{proof}
+
+Как следствие $\mathbb{P}(\overline{A}) = 1 - \mathbb{P}(A),\ \mathbb{P}(A) = 1 - \mathbb{P}(\overline{A})$.
+
+\section{Задачи}
+
+\begin{task}[equally-likely-outcomes/problems/1]\label{task-problems-1}
+\textbf{1. [ОГЭ]} В фирме такси в данный момент свободно 10 машин: 5 черных, 3 желтых и 2 зеленых. По вызову выехала одна из машин, случайно оказавшаяся ближе всего к заказчику. Найдите вероятность того, что к нему приедет желтое такси.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/1]\label{solution-equally-likely-outcomes-problems-1}
+В принятой в задаче равновозможной модели каждая из десяти свободных машин может оказаться выбранной. Жёлтых машин три, поэтому
+
+\[\mathbb P=\frac3{10}=0,3.\]
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/2]\label{task-problems-2}
+\textbf{2. [ОГЭ]} Игральную кость бросают дважды. Найдите вероятность того, что сумма двух выпавших чисел равна 4 или 7.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/2]\label{solution-equally-likely-outcomes-problems-2}
+Элементарный исход — пара результатов первого и второго бросков. Всего $6^2=36$ равновозможных пар.
+
+Сумму 4 дают пары $(1,3),(2,2),(3,1)$ — три исхода. Сумму 7 дают $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$ — шесть исходов. Эти два списка не пересекаются.
+
+\textbf{Ответ:} $\frac{3+6}{36}=\frac14$.
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/3]\label{task-problems-3}
+\textbf{3. [ОГЭ]} Симметричный игральный кубик бросают два раза. Найдите вероятность события «сумма выпавших очков равна 3, 4 или 5».
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/3]\label{solution-equally-likely-outcomes-problems-3}
+Всего 36 равновозможных упорядоченных пар результатов.
+
+Сумма 3: $(1,2),(2,1)$ — два исхода.
+
+Сумма 4: $(1,3),(2,2),(3,1)$ — три исхода.
+
+Сумма 5: $(1,4),(2,3),(3,2),(4,1)$ — четыре исхода.
+
+\textbf{Ответ:} $\frac{2+3+4}{36}=\frac14$.
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/4]\label{task-problems-4}
+\textbf{4. [ОГЭ]} В случайном эксперименте симметричную монету бросают трижды. Найдите вероятность того, что орел выпадет ровно 2 раза.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/4]\label{solution-equally-likely-outcomes-problems-4}
+У трёх бросков $2^3=8$ равновозможных исходов. Ровно два орла выпадают в трёх из них: ООР, ОРО и РОО.
+
+\textbf{Ответ:} $\frac38$.
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/5]\label{task-problems-5}
+\textbf{Задача 5.} Игральный кубик бросают два раза. Найдите вероятность того, что выпадут разные числа.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/5]\label{solution-equally-likely-outcomes-problems-5-method-1}
+\textbf{Решение.} Событие $A$  —  "выпали разные числа". Тогда событие $\overline{A}$  —  выпали одинаковые числа. Найдём $\mathbb{P}(\overline{A})$. Множество элементарных исходов состоит из $36$ элементарных событий, каждое из которых равновозможно. Каждое элементарное событие  —  это пара чисел $(a,b)$, где $a$  —  результат первого броска, $b$  —  результат второго. Нас интересуют исходы в которых $a = b$. Отметим в таблице такие события. Всего их $6$, значит $\mathbb{P}(\overline{A}) = \frac{6}{36} = \frac{1}{6}$. Итого $\mathbb{P}(A) = 1 - \frac{1}{6} = \frac{5}{6}$
+
+\figure{dice-pairs.png}{Таблица исходов двух бросков кубика с одинаковыми результатами на диагонали}{320}{318}
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/6]\label{task-problems-6}
+\textbf{6. [ОГЭ]} Вероятность того, что новая шариковая ручка пишет плохо (или не пишет), равна $0,19$. Покупатель в магазине выбирает одну такую ручку. Найдите вероятность того, что эта ручка пишет хорошо.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/6]\label{solution-equally-likely-outcomes-problems-6}
+События «ручка пишет хорошо» и «ручка пишет плохо или не пишет» противоположны. Их вероятности в сумме равны 1.
+
+\textbf{Ответ:} $1-0,19=0,81$.
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/7]\label{task-problems-7}
+\textbf{7.} Фабрика выпускает сумки. В среднем на 100 качественных сумок приходится восемь сумок со скрытыми дефектами. Найдите вероятность того, что купленная сумка окажется качественной. Результат округлите до сотых.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/7]\label{solution-equally-likely-outcomes-problems-7}
+На каждые 100 качественных сумок приходится ещё 8 дефектных, то есть всего в соответствующей группе 108 сумок. Вероятность купить качественную сумку равна
+
+\[\frac{100}{100+8}=\frac{25}{27}\approx0,925926.\]
+
+\textbf{Ответ после округления до сотых:} $0,93$. Делить 100 на 100 здесь нельзя: дефектные сумки тоже входят в общее число.
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/8]\label{task-problems-8}
+\textbf{8. [ОГЭ]} На экзамене 20 билетов, Сергей не выучил 3 из них. Найдите вероятность того, что ему попадется выученный билет.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/8]\label{solution-equally-likely-outcomes-problems-8}
+Из 20 билетов выучены $20-3=17$. Все билеты равновозможны, поэтому
+
+\[\mathbb P=\frac{17}{20}=0,85.\]
+\end{solution}
+
+\subsection{Решение задач}
+
+\begin{task}[equally-likely-outcomes/problems/9]\label{task-problems-9}
+\textbf{9. [ЕГЭ]} В фирме такси в наличии 50 легковых автомобилей; 27 из них чёрного цвета с жёлтыми надписями на бортах, остальные  —  жёлтого цвета с чёрными надписями. Найдите вероятность того, что на случайный вызов приедет машина жёлтого цвета с чёрными надписями.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/9]\label{solution-equally-likely-outcomes-problems-9}
+Жёлтых автомобилей с чёрными надписями $50-27=23$. В равновозможной модели выбора машины
+
+\[\mathbb P=\frac{23}{50}=0,46.\]
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/10]\label{task-problems-10}
+\textbf{10. [ЕГЭ]} За круглый стол на 5 стульев в случайном порядке рассаживаются 3 мальчика и 2 девочки. Найдите вероятность того, что девочки будут сидеть рядом.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/10]\label{solution-equally-likely-outcomes-problems-10}
+Мысленно зафиксируем место одной из девочек. Вторая девочка с одинаковой вероятностью занимает любое из четырёх оставшихся мест. С первой девочкой соседствуют два из этих мест — слева и справа.
+
+\textbf{Ответ:} $\frac24=\frac12$. Рассадка мальчиков на оставшиеся места не меняет этого отношения.
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/11]\label{task-problems-11}
+\textbf{11. [ЕГЭ]} За круглый стол на 9 стульев в случайном порядке рассаживаются 7 мальчиков и 2 девочки. Найдите вероятность того, что девочки не будут сидеть рядом.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/11]\label{solution-equally-likely-outcomes-problems-11}
+Зафиксируем место одной девочки. Для второй девочки есть восемь равновозможных мест, из которых два — соседние с первой. Поэтому вероятность сидеть рядом равна $\frac28=\frac14$.
+
+Искомое событие противоположно этому:
+
+\[\mathbb P(\text{не рядом})=1-\frac14=\frac34.\]
+\end{solution}
+
+\begin{task}[equally-likely-outcomes/problems/12]\label{task-problems-12}
+\textbf{12. [ЕГЭ]} У Дины в копилке лежит 7 рублёвых, 5 двухрублёвых, 6 пятирублёвых и 2 десятирублёвых монеты. Дина наугад достаёт из копилки одну монету. Найдите вероятность того, что оставшаяся в копилке сумма составит менее 60 рублей.
+\end{task}
+
+\begin{solution}[equally-likely-outcomes/problems/12]\label{solution-equally-likely-outcomes-problems-12}
+Начальная сумма в копилке равна
+
+\[7\cdot1+5\cdot2+6\cdot5+2\cdot10=67\text{ рублей}.\]
+
+После извлечения монеты достоинством $v$ рублей остаётся $67-v$. Требование $67-v<60$ равносильно $v>7$. Из имеющихся монет подходят только десятирублёвые.
+
+Всего монет $7+5+6+2=20$, подходящих — две. \textbf{Ответ:} $\frac2{20}=\frac1{10}=0,1$.
+\end{solution}
+

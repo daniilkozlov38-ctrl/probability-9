@@ -74,7 +74,7 @@ for (const [index, topic] of topics.entries()) {
   const content = {};
   const availableSections = sectionDefinitions.filter(([id]) => id !== 'homework' || topic.hasHomework !== false);
   for (const [key] of availableSections) {
-    try { content[key] = await readFile(key === 'theory' ? path.join(project, '.generated/theory', `${topic.id}.html`) : path.join(project, 'content', topic.id, `${key}.html`), 'utf8'); }
+    try { content[key] = await readFile(key === 'theory' ? path.join(project, '.generated/theory', `${topic.id}.html`) : path.join(project, '.generated/content', topic.id, `${key}.html`), 'utf8'); }
     catch (error) { if (error.code !== 'ENOENT') throw error; content[key] = ''; }
     validateLesson(content[key], `${topic.id}/${key}`);
     let headingIndex = 0;
