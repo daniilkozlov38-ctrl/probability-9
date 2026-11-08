@@ -3,3 +3,5 @@
 node_modules/
 .generated/
 __pycache__/
+
+dist/

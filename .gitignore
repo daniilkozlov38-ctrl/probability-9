@@ -1,0 +1,15 @@
+# Only the site and its workflow belong to this repository.
+/*
+!/.gitignore
+!/AGENTS.md
+!/README.md
+!/.github/
+!/.agents/
+!/docs/
+!/incoming/
+!/website/
+.DS_Store
+**/__pycache__/
+incoming/*
+!incoming/README.md
+!incoming/_template/

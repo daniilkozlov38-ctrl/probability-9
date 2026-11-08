@@ -1,0 +1,11 @@
+{
+  "id": "new-lesson",
+  "title": "Название нового урока",
+  "status": "draft",
+  "hasHomework": true,
+  "solutions_reviewed": false,
+  "forbidden_methods": [],
+  "placement_note": null,
+  "unresolved_questions": [],
+  "source_notes": []
+}

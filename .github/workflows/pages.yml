@@ -28,6 +28,8 @@ jobs:
           python-version: '3.13'
       - name: Test LaTeX authoring
         run: python3 website/scripts/test-authoring.py
+      - name: Test lesson handoff
+        run: python3 website/scripts/test-add-lesson.py
       - name: Build from lesson sources
         run: node website/scripts/build.mjs
       - name: Validate pages and links
