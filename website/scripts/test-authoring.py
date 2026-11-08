@@ -10,7 +10,7 @@ for topic in json.loads((ROOT/'data/topics.json').read_text())['topics']:
  edited=compile_lesson(source.replace(r'\section{Теория}',r'\section{Теория}'+'\nПроверка редактирования $x=1$.\n',1),topic)
  assert 'Проверка редактирования' in edited['theory'] and original['theory']!=edited['theory']
  assert all(original[k]==edited[k] for k in original if k!='theory')
- for bad in [source.replace(r'\end{solution}' if r'\end{solution}' in source else r'\end{proof}','',1),source.replace(r'\section{Теория}',r'\section{Теория}\unknown{ошибка}',1)]:
+ for bad in [source.replace(next(marker for marker in [r'\end{solution}',r'\end{proof}',r'\end{definition}'] if marker in source),'',1),source.replace(r'\section{Теория}',r'\section{Теория}\unknown{ошибка}',1)]:
   try:compile_lesson(bad,topic)
   except ValueError:pass
   else:raise AssertionError('Bad source accepted: '+topic['id'])

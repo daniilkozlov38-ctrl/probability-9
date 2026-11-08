@@ -24,21 +24,13 @@
 \interactive{conditional-geometry}
 
 \subsection{Почему знаменатель теперь другой}
-\begin{theorem}[conditional-probability-geometry/theorem/1]\label{theorem-1}
+\begin{definition}
 Если $n(B)>0$, то
 \[
  P(A\mid B)=\frac{P(A\cap B)}{P(B)}=\frac{n(A\cap B)}{n(B)}.
 \]
 В знаменателе стоит число исходов внутри полосы-условия, а не число исходов во всём квадрате.
-\end{theorem}
-
-\begin{proof}[conditional-probability-geometry/theorem/1]\label{solution-conditional-probability-geometry-theorem-1}
-Подставим вероятности через числа равновероятных исходов в определение условной вероятности:
-\[
- P(A\mid B)=\frac{n(A\cap B)/N}{n(B)/N}=\frac{n(A\cap B)}{n(B)}.
-\]
-Общий делитель $N$ сокращается. После условия $B$ новым целым становится множество исходов внутри полосы $B$.
-\end{proof}
+\end{definition}
 
 \subsection{Что меняется при движении полос}
 Перемещайте вертикальную полосу при неизменной горизонтальной. Вероятность $P(A)$ останется прежней: ни событие $A$, ни общее число исходов не изменились. Однако в новое условие $B$ могут попасть клетки с другим количеством исходов, поэтому $P(A\mid B)$ может измениться.
