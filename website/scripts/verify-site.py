@@ -25,6 +25,9 @@ for path in DIST.rglob('*.html'):
    other=Page();other.feed(target.read_text());assert unquote(u.fragment) in other.ids,(path,href)
   checked+=1
  root=parse_fragment(text)
+ if path.parent.name=='conditional-probability-geometry':
+  assert not any(n.tag=='details' and n.has_class('proof') for n in root.walk()),'Denominator proof must stay removed'
+  assert 'Подставим вероятности через числа' not in root.text()
  details=[n for n in root.walk() if n.tag=='details' and n.has_class('solution')]
  assert all('open' not in n.attrs for n in details),path
  for n in root.walk():

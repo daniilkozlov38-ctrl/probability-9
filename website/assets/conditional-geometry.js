@@ -23,12 +23,17 @@
     }
     const aTag=el('text',{'class':'geometry-band-label','data-drag':'a-move','text-anchor':'middle'},svg,'A');
     const bTag=el('text',{'class':'geometry-band-label','data-drag':'b-move','text-anchor':'middle'},svg,'B');
+    const aCount=el('tspan',{'class':'geometry-event-count'},aTag);
+    const bCount=el('tspan',{'class':'geometry-event-count'},bTag);
     const set=(n,attrs)=>{for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);};
     const fmt=x=>x.toLocaleString('ru-RU',{maximumFractionDigits:4});
     function render(){
       state=model.normalize(state);const m=model.measure(state),ay=state.aStart*50,ah=state.aSize*50,bx=state.bStart*50,bw=state.bSize*50;
       set(a,{x:0,y:ay,width:500,height:ah});set(b,{x:bx,y:0,width:bw,height:500});set(intersection,{x:bx,y:ay,width:bw,height:ah});
-      set(aTag,{x:-23,y:ay+ah/2+6});set(bTag,{x:bx+bw/2,y:-17});
+      set(aTag,{x:-23,y:ay+ah/2-7,'aria-label':`A: ${m.a} элементарных исходов`});
+      set(aCount,{x:-23,dy:22});aCount.textContent=m.a;
+      set(bTag,{x:bx+bw/2,y:-25,'aria-label':`B: ${m.b} элементарных исходов`});
+      set(bCount,{x:bx+bw/2,dy:19});bCount.textContent=m.b;
       for(const [kind,h]of Object.entries(handles)){
         const isA=kind[0]==='a',p=isA?(kind.endsWith('start')?ay:ay+ah):(kind.endsWith('start')?bx:bx+bw);
         set(h.line,isA?{x1:0,x2:500,y1:p,y2:p}:{x1:p,x2:p,y1:0,y2:500});set(h.circle,isA?{cx:-16,cy:p}:{cx:p,cy:516});
