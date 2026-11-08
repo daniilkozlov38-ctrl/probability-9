@@ -76,7 +76,8 @@
       "y": 800,
       "tocTheory": "headings",
       "hasProblems": false,
-      "hasHomework": false
+      "hasHomework": false,
+      "additional": true
     }
   ],
   "edges": [

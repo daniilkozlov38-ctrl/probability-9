@@ -64,7 +64,7 @@ await mkdir(dist, { recursive: true });
 await cp(path.join(project, 'assets'), path.join(dist, 'assets'), { recursive: true });
 
 const cards = topics.map(topic => `<li class="topic-node" style="--x:${topic.x}px;--y:${topic.y}px" data-topic="${topic.id}" data-x="${topic.x}" data-y="${topic.y}">
-  <a class="topic-card" href="topics/${topic.id}/index.html"><span class="card-topline"><span class="card-number">${String(topic.order).padStart(2, '0')}</span><span class="card-type">Тема</span></span><h2>${escape(topic.title)}</h2><span class="card-bottomline">Открыть тему<span class="card-arrow">${arrowIcon}</span></span></a>
+  <a class="topic-card" href="topics/${topic.id}/index.html"><span class="card-topline">${topic.additional ? '<span class="card-type">Дополнительная тема</span>' : `<span class="card-number">${String(topic.order).padStart(2, '0')}</span><span class="card-type">Тема</span>`}</span><h2>${escape(topic.title)}</h2><span class="card-bottomline">Открыть тему<span class="card-arrow">${arrowIcon}</span></span></a>
 </li>`).join('\n');
 const home = render(templates.home, { ...shared, cards, edges: escape(JSON.stringify(config.edges)) });
 await writeFile(path.join(dist, 'index.html'), render(templates.base, {
