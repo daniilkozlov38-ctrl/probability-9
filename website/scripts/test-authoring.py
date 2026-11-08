@@ -18,4 +18,4 @@ for bad in ['$x',r'\textbf{не закрыто',r'\begin{enumerate}\item оди�
  try:Renderer(bad).parse()
  except ValueError:pass
  else:raise AssertionError('Malformed LaTeX accepted')
-print('Passed: edits in all 6 sources reach HTML; malformed content rejected.')
+print('Passed: edits in all lesson sources reach HTML; malformed content rejected.')

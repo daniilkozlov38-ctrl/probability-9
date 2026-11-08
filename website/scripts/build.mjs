@@ -11,7 +11,7 @@ const dist = path.join(project, 'dist');
 const config = JSON.parse(await readFile(path.join(project, 'data/topics.json'), 'utf8'));
 const theoryBlocks = JSON.parse(await readFile(path.join(project, 'data/theory-blocks.json'), 'utf8'));
 const assetHash = createHash('sha256');
-for (const name of ['styles.css', 'lessons.css', 'map.css', 'site.js', 'map.js', 'math-config.js']) assetHash.update(await readFile(path.join(project, 'assets', name)));
+for (const name of ['styles.css', 'lessons.css', 'map.css', 'site.js', 'map.js', 'math-config.js', 'conditional-geometry.css', 'conditional-geometry-model.js', 'conditional-geometry.js']) assetHash.update(await readFile(path.join(project, 'assets', name)));
 const assetVersion = assetHash.digest('hex').slice(0, 10);
 const topics = [...config.topics].sort((a, b) => a.order - b.order);
 const ids = new Set();
@@ -20,9 +20,13 @@ for (const [index, topic] of topics.entries()) {
   if (topic.order !== index + 1 || !topic.title.trim()) throw new Error(`Invalid topic order or title: ${topic.id}`);
   ids.add(topic.id);
 }
-if (config.edges.length !== topics.length - 1) throw new Error('The route must connect all topics in sequence.');
-for (const [index, edge] of config.edges.entries()) {
-  if (edge.from !== topics[index].id || edge.to !== topics[index + 1].id) throw new Error('Graph and lesson sequence disagree.');
+const seenEdges = new Set();
+for (const edge of config.edges) {
+  const key = `${edge.from}/${edge.to}`;
+  if (!ids.has(edge.from) || !ids.has(edge.to) || edge.from === edge.to || seenEdges.has(key)) throw new Error(`Invalid graph edge: ${key}`);
+  for (const port of [edge.fromPort, edge.toPort]) if (!['left', 'right', 'top', 'bottom'].includes(port)) throw new Error(`Invalid edge port: ${key}`);
+  if (edge.fromPosition !== undefined && (!Number.isFinite(edge.fromPosition) || edge.fromPosition < 0 || edge.fromPosition > 1)) throw new Error(`Invalid exit position: ${key}`);
+  seenEdges.add(key);
 }
 
 const escape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
@@ -45,7 +49,7 @@ function validateLesson(html, context) {
   const claims = [...html.matchAll(/\bdata-claim="([^"]+)"/g)].map(match => match[1]);
   const statements = [...html.matchAll(/\bclass="(?:problem-statement|exercise-statement)"/g)];
   const theorems = [...html.matchAll(/<aside\b[^>]*\bclass="[^"]*\btheorem\b[^"]*"/g)];
-  if (statements.length !== tasks.length || theorems.length !== claims.length) throw new Error(`Run complete-lessons.py before building: ${context}`);
+  if (statements.length !== tasks.length || theorems.length !== claims.length) throw new Error(`Invalid lesson structure: ${context}`);
   const disclosures = [...html.matchAll(/<details\b([^>]*)>/g)];
   const linked = new Set(disclosures.filter(match => !/\bdata-kind="given"/.test(match[1])).map(match => match[1].match(/\bdata-for="([^"]+)"/)?.[1]).filter(Boolean));
   for (const key of [...tasks, ...claims]) if (!linked.has(key)) throw new Error(`Missing solution/proof: ${key}`);
@@ -76,6 +80,7 @@ for (const [index, topic] of topics.entries()) {
   for (const [key] of availableSections) {
     try { content[key] = await readFile(key === 'theory' ? path.join(project, '.generated/theory', `${topic.id}.html`) : path.join(project, '.generated/content', topic.id, `${key}.html`), 'utf8'); }
     catch (error) { if (error.code !== 'ENOENT') throw error; content[key] = ''; }
+    content[key] = content[key].replace('<div data-interactive="conditional-geometry"></div>', await readFile(path.join(project, 'templates/conditional-geometry.html'), 'utf8'));
     validateLesson(content[key], `${topic.id}/${key}`);
     let headingIndex = 0;
     content[key] = content[key].replace(/<h3>/g, () => `<h3 id="${key}-subtopic-${++headingIndex}">`);
@@ -83,7 +88,7 @@ for (const [index, topic] of topics.entries()) {
   const sections = availableSections.map(([id, title], sectionIndex) => `<section class="lesson-section" id="${id}" aria-labelledby="${id}-title"><div class="section-heading"><span class="section-number">${String(sectionIndex + 1).padStart(2, '0')}</span><h2 id="${id}-title">${title}</h2></div>${content[id].trim() ? `<div class="section-content">${content[id]}</div>` : '<div class="empty-section"><span class="empty-line" aria-hidden="true"></span><p>Материалы ещё не добавлены</p></div>'}</section>`).join('\n');
   const sectionLinks = availableSections.map(([id,title], sectionIndex) => `<a href="#${id}"${sectionIndex === 0 ? ' aria-current="location"' : ''}>${id === 'homework' ? 'ДЗ' : title}</a>`).join('');
   const tocLinks = availableSections.map(([id, title]) => {
-    const entries = [...content[id].matchAll(/<(?:div|aside|p|h3|figure)\b[^>]*\bid="((?:task-|theorem-|theory-block-|\w+-subtopic-)[^"]+)"[^>]*>([\s\S]*?)(?=<\/(?:div|aside|p|h3|figure)>)/g)].map(match => {
+    const entries = [...content[id].matchAll(/<(?:div|aside|p|h3|figure)\b[^>]*\bid="((?:task-|theorem-|theory-block-|\w+-subtopic-)[^"]+)"[^>]*>([\s\S]*?)(?=<\/(?:div|aside|p|h3|figure)>)/g)].filter(match => id !== 'theory' || topic.tocTheory !== 'headings' || /^(theory-subtopic-|theorem-)/.test(match[1])).map(match => {
       const label = theoryBlocks.find(t => t.id === topic.id)?.blocks.find(block => block.id === match[1])?.label || match[2].match(/<strong>([\s\S]*?)<\/strong>/)?.[1].replace(/<[^>]*>/g, '').trim()
         || (match[1].includes('-subtopic-') ? match[2].replace(/<[^>]*>/g, '').trim() : match[1].startsWith('theorem-') ? `Теорема ${match[1].slice(8)}` : 'Упражнение');
       return `<a class="toc-item" href="#${escape(match[1])}">${escape(label.replace(/[.:]$/, ''))}</a>`;
@@ -98,7 +103,7 @@ for (const [index, topic] of topics.entries()) {
   await mkdir(directory, { recursive: true });
   await writeFile(path.join(directory, 'index.html'), render(templates.base, {
     ...shared, root:'../../', bodyClass:'topic-page', pageTitle:`${escape(topic.title)} — ${shared.siteTitle}`,
-    description:escape(`${topic.title}. Теория, задачи и домашнее задание по материалам уроков.`), mapCurrent:'', pageAssets:'<link rel="stylesheet" href="../../assets/lessons.css"><script src="../../assets/math-config.js" defer></script><script src="../../assets/vendor/mathjax/tex-svg-full.js" defer></script>', body
+    description:escape(`${topic.title}. Теория, задачи и домашнее задание по материалам уроков.`), mapCurrent:'', pageAssets:'<link rel="stylesheet" href="../../assets/lessons.css"><script src="../../assets/math-config.js" defer></script><script src="../../assets/vendor/mathjax/tex-svg-full.js" defer></script>' + (content.theory.includes('data-geometry-lab') ? '<link rel="stylesheet" href="../../assets/conditional-geometry.css"><script src="../../assets/conditional-geometry-model.js" defer></script><script src="../../assets/conditional-geometry.js" defer></script>' : ''), body
   }));
 }
 console.log(`Built ${topics.length + 1} pages: the course map and ${topics.length} topic pages.`);

@@ -67,6 +67,14 @@
       ],
       "x": 610,
       "y": 980
+    },
+    {
+      "id": "conditional-probability-geometry",
+      "title": "Геометрия условной вероятности",
+      "order": 7,
+      "x": 1100,
+      "y": 800,
+      "tocTheory": "headings"
     }
   ],
   "edges": [
@@ -100,6 +108,13 @@
       "fromPort": "right",
       "toPort": "left",
       "fromPosition": 0.8
+    },
+    {
+      "to": "conditional-probability-geometry",
+      "fromPort": "bottom",
+      "toPort": "left",
+      "fromPosition": 0.8,
+      "from": "conditional-probability"
     }
   ]
 }

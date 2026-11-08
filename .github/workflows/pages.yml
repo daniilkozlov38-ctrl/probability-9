@@ -30,6 +30,8 @@ jobs:
         run: python3 website/scripts/test-authoring.py
       - name: Test lesson handoff
         run: python3 website/scripts/test-add-lesson.py
+      - name: Test conditional geometry model
+        run: node website/scripts/test-conditional-geometry.cjs
       - name: Build from lesson sources
         run: node website/scripts/build.mjs
       - name: Validate pages and links

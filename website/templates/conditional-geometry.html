@@ -1,0 +1,20 @@
+<div class="geometry-lab" data-geometry-lab>
+  <div class="geometry-lab-heading"><div><p class="geometry-eyebrow">Исследуйте сами</p><p class="geometry-widget-title">Одно условие — новое целое</p></div><button type="button" data-geometry-reset>Сбросить</button></div>
+  <div class="geometry-legend"><span class="geometry-key geometry-key-a">A · горизонтальная полоса</span><span class="geometry-key geometry-key-b">B · условие</span><span class="geometry-key geometry-key-ab">A ∩ B · пересечение</span></div>
+  <div class="geometry-layout">
+    <div class="geometry-board-wrap"><svg data-geometry-board viewBox="-40 -40 580 580" role="img" aria-label="Квадрат из ста исходов с разными весами. Горизонтальная полоса — A, вертикальная — условие B. Управляйте полосами мышью или ползунками ниже."></svg><p class="geometry-hint">Тяните полосу, чтобы сдвинуть её. Круглые ручки меняют её границы. Число в клетке — вес исхода.</p></div>
+    <div class="geometry-results" aria-live="polite" aria-atomic="true">
+      <p class="geometry-total">Вес всего квадрата W = <strong data-geometry-total></strong></p>
+      <div class="geometry-stat"><span>P(A)</span><output data-geometry-pa></output></div>
+      <div class="geometry-stat"><span>P(B)</span><output data-geometry-pb></output></div>
+      <div class="geometry-stat"><span>P(A ∩ B)</span><output data-geometry-pab></output></div>
+      <div class="geometry-conditional"><span>P(A | B)</span><output data-geometry-conditional></output><div class="geometry-ratio-track" aria-hidden="true"><span data-geometry-ratio></span></div><p data-geometry-explanation></p></div>
+    </div>
+  </div>
+  <div class="geometry-controls">
+    <fieldset><legend>Событие A · строки</legend><label>Отступ сверху <output data-geometry-value="aStart"></output><input type="range" min="0" max="6" step="1" value="1" data-geometry-input="aStart"></label><label>Высота полосы <output data-geometry-value="aSize"></output><input type="range" min="0" max="10" step="1" value="4" data-geometry-input="aSize"></label></fieldset>
+    <fieldset><legend>Условие B · столбцы</legend><label>Отступ слева <output data-geometry-value="bStart"></output><input type="range" min="0" max="7" step="1" value="5" data-geometry-input="bStart"></label><label>Ширина полосы <output data-geometry-value="bSize"></output><input type="range" min="0" max="10" step="1" value="3" data-geometry-input="bSize"></label></fieldset>
+  </div>
+  <p class="geometry-model-note">Клетки равны по размеру, но не по вероятности. Считаем веса, а не площади.</p>
+  <noscript>Для управления полосами включите JavaScript. Определения и задачи этого урока доступны без него.</noscript>
+</div>

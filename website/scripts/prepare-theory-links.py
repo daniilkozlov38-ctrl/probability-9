@@ -33,8 +33,10 @@ def main():
    blocks.append({'id':n.attrs['id'],'label':label,'heading':n.tag=='h3'})
   catalog.append({'id':topic['id'],'title':topic['title'],'blocks':blocks})
   (output/(topic['id']+'.html')).write_text(root.render()+'\n')
+ previous_ids={t["id"] for t in topics if t["order"] < next(t["order"] for t in topics if t["id"]=="problem-solving-practice")}
  index=[]
  for topic in catalog:
+  if topic["id"] not in previous_ids:continue
   link=Element('a',{'href':f'../{topic["id"]}/index.html#theory'},['Теория'])
   index.append(Element('li',children=[topic['title']+' | ',link]).render())
  index=['<ul class="theory-reference-list">'+''.join(index)+'</ul>']

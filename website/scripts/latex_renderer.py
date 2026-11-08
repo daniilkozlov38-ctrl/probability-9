@@ -60,6 +60,10 @@ class Renderer:
                     if url.lower().startswith(('javascript:','data:')):raise ValueError('Недопустимая ссылка')
                     inline.append(Element('a',{'href':url},Renderer(title).inline_nodes()));continue
                 if cmd=='subsection':block(Element('h3',children=Renderer(self.group()).inline_nodes()));continue
+                if cmd=='interactive':
+                    name=self.group()
+                    if name!='conditional-geometry':raise ValueError('Неизвестная интерактивная модель: '+name)
+                    block(Element('div',{'data-interactive':name}));continue
                 if cmd=='previoustheory':block(Element('div',{'data-theory-index':'all'}));continue
                 if cmd=='figure':
                     filename,alt,width,height=[self.group() for _ in range(4)]

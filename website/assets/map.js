@@ -47,17 +47,18 @@
     cancelAnimationFrame(drawing);drawing=requestAnimationFrame(()=>{
       if(list)return;paths.replaceChildren();
       for(const e of edges){
-        const fp=mobile.matches?'bottom':e.fromPort,tp=mobile.matches?'top':e.toPort;
+        const branch=mobile.matches&&nodes.indexOf(nodeMap.get(e.to))!==nodes.indexOf(nodeMap.get(e.from))+1;
+        const fp=mobile.matches?(branch?'right':'bottom'):e.fromPort,tp=mobile.matches?(branch?'right':'top'):e.toPort;
         const a=anchor(nodeMap.get(e.from),fp,mobile.matches?.5:(e.fromPosition??.5)),b=anchor(nodeMap.get(e.to),tp),u=ports[fp],v=ports[tp],end=[b[0]+v[0]*4,b[1]+v[1]*4];
         const bend=Math.min(170,Math.max(45,Math.hypot(b[0]-a[0],b[1]-a[1])*.42));
         const line=document.createElementNS('http://www.w3.org/2000/svg','path');line.dataset.from=e.from;line.dataset.to=e.to;
-        line.setAttribute('d',`M ${a[0]} ${a[1]} C ${a[0]+u[0]*bend} ${a[1]+u[1]*bend}, ${end[0]+v[0]*bend} ${end[1]+v[1]*bend}, ${end[0]} ${end[1]}`);
+        line.setAttribute('d',branch?`M ${a[0]} ${a[1]} C 395 ${a[1]}, 395 ${a[1]}, 395 ${a[1]+40} L 395 ${end[1]-40} Q 395 ${end[1]}, ${end[0]} ${end[1]}`:`M ${a[0]} ${a[1]} C ${a[0]+u[0]*bend} ${a[1]+u[1]*bend}, ${end[0]+v[0]*bend} ${end[1]+v[1]*bend}, ${end[0]} ${end[1]}`);
         line.setAttribute('marker-end','url(#arrowhead)');paths.append(line);
       }
     });
   }
   function layout(){
-    const w=mobile.matches?420:1500,h=mobile.matches?1550:1000;world.style.width=`${w}px`;world.style.height=`${h}px`;svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
+    const w=mobile.matches?420:Math.max(1500,...original.map(n=>n.x+340)),h=mobile.matches?Math.max(1550,250+nodes.length*235):Math.max(1000,...original.map(n=>n.y+230));world.style.width=`${w}px`;world.style.height=`${h}px`;svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
     nodes.forEach((n,i)=>{n.style.setProperty('--x',`${mobile.matches?65:original[i].x}px`);n.style.setProperty('--y',`${mobile.matches?250+i*235:original[i].y}px`);});
     draw();if(!list)startView();
   }
