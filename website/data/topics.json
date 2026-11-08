@@ -78,6 +78,14 @@
       "hasProblems": false,
       "hasHomework": false,
       "additional": true
+    },
+    {
+      "id": "negation-test",
+      "title": "Отрицания и противоположные события",
+      "order": 8,
+      "x": 1100,
+      "y": 1100,
+      "type": "trainer"
     }
   ],
   "edges": [

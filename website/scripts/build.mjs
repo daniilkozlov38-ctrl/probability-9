@@ -64,7 +64,7 @@ await mkdir(dist, { recursive: true });
 await cp(path.join(project, 'assets'), path.join(dist, 'assets'), { recursive: true });
 
 const cards = topics.map(topic => `<li class="topic-node" style="--x:${topic.x}px;--y:${topic.y}px" data-topic="${topic.id}" data-x="${topic.x}" data-y="${topic.y}">
-  <a class="topic-card" href="topics/${topic.id}/index.html"><span class="card-topline">${topic.additional ? '<span class="card-type">Дополнительная тема</span>' : `<span class="card-number">${String(topic.order).padStart(2, '0')}</span><span class="card-type">Тема</span>`}</span><h2>${escape(topic.title)}</h2><span class="card-bottomline">Открыть тему<span class="card-arrow">${arrowIcon}</span></span></a>
+  <a class="topic-card" href="topics/${topic.id}/index.html"><span class="card-topline">${topic.type === 'trainer' ? '<span class="card-type">Тренажёр</span>' : topic.additional ? '<span class="card-type">Дополнительная тема</span>' : `<span class="card-number">${String(topic.order).padStart(2, '0')}</span><span class="card-type">Тема</span>`}</span><h2>${escape(topic.title)}</h2><span class="card-bottomline">${topic.type === 'trainer' ? 'Начать тренировку' : 'Открыть тему'}<span class="card-arrow">${arrowIcon}</span></span></a>
 </li>`).join('\n');
 const home = render(templates.home, { ...shared, cards, edges: escape(JSON.stringify(config.edges)) });
 await writeFile(path.join(dist, 'index.html'), render(templates.base, {
@@ -75,6 +75,12 @@ await writeFile(path.join(dist, 'index.html'), render(templates.base, {
 
 const sectionDefinitions = [ ['theory', 'Теория'], ['problems', 'Задачи'], ['homework', 'Домашнее задание'] ];
 for (const [index, topic] of topics.entries()) {
+  if (topic.type === 'trainer') {
+    const directory = path.join(dist, 'topics', topic.id);
+    await mkdir(directory, { recursive: true });
+    await cp(path.join(project, 'templates', `${topic.id}.html`), path.join(directory, 'index.html'));
+    continue;
+  }
   const content = {};
   const availableSections = sectionDefinitions.filter(([id]) => (id !== 'homework' || topic.hasHomework !== false) && (id !== 'problems' || topic.hasProblems !== false));
   for (const [key] of availableSections) {
@@ -95,8 +101,8 @@ for (const [index, topic] of topics.entries()) {
     }).join('');
     return `<div class="toc-group"><a class="toc-section" href="#${id}">${title}</a>${entries}</div>`;
   }).join('');
-  const previous = topics[index - 1];
-  const next = topics[index + 1];
+  const previous = topics.slice(0, index).findLast(item => item.type !== 'trainer');
+  const next = topics.slice(index + 1).find(item => item.type !== 'trainer');
   const pagination = (target, direction) => target ? `<a class="pagination-link ${direction}" href="../${target.id}/index.html"><span>${direction === 'previous' ? '← Предыдущая тема' : 'Следующая тема →'}</span><strong>${escape(target.title)}</strong></a>` : '<span class="pagination-spacer" aria-hidden="true"></span>';
   const body = render(templates.topic, { ...shared, root:'../../', number:String(topic.order).padStart(2, '0'), topicLabel:topic.additional ? 'Дополнительная тема' : `Тема ${String(topic.order).padStart(2, '0')}`, topicTitle:escape(topic.title), sections, sectionLinks, tocLinks, previous:pagination(previous, 'previous'), next:pagination(next, 'next') });
   const directory = path.join(dist, 'topics', topic.id);

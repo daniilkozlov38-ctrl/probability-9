@@ -30,6 +30,7 @@ def compile_lesson(source,topic):
 def main():
     all_content={}
     for topic in json.loads((ROOT/'data/topics.json').read_text())['topics']:
+        if topic.get('type')=='trainer':continue
         try:all_content[topic['id']]=compile_lesson((ROOT/'lessons'/(topic['id']+'.tex')).read_text(),topic)
         except ValueError as e:raise SystemExit(f'Ошибка в lessons/{topic["id"]}.tex: {e}')
     dest=ROOT/'.generated/content';temp=ROOT/'.generated/content-next'

@@ -5,6 +5,7 @@ from latex_renderer import Renderer
 ROOT=Path(__file__).resolve().parents[1]
 compile_lesson=runpy.run_path(str(ROOT/'scripts/build-tex-lesson.py'))['compile_lesson']
 for topic in json.loads((ROOT/'data/topics.json').read_text())['topics']:
+ if topic.get('type')=='trainer':continue
  source=(ROOT/'lessons'/(topic['id']+'.tex')).read_text()
  original=compile_lesson(source,topic)
  edited=compile_lesson(source.replace(r'\section{Теория}',r'\section{Теория}'+'\nПроверка редактирования $x=1$.\n',1),topic)

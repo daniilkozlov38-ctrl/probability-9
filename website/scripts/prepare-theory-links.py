@@ -13,7 +13,7 @@ def main():
  output=ROOT/'.generated/theory';output.mkdir(parents=True,exist_ok=True)
  catalog=[]
  for topic in topics:
-  if topic['id']=='problem-solving-practice':continue
+  if topic['id']=='problem-solving-practice' or topic.get('type')=='trainer':continue
   root=parse_fragment((ROOT/'.generated/content'/topic['id']/'theory.html').read_text())
   blocks=[];heading=0;serial=0
   for n in root.children:
