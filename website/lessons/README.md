@@ -9,7 +9,7 @@
 - conditional-probability.tex — Условная вероятность
 - independent-events.tex — Независимость событий
 - problem-solving-practice.tex — Практика решения задач
-- conditional-probability-geometry.tex — Геометрия условной вероятности
+- conditional-probability-geometry.tex — Геометрия условной вероятности (только теория)
 
 ## Предпросмотр и публикация
 
@@ -66,4 +66,6 @@
 
 Это LaTeX содержимого, без `\documentclass`, `\usepackage` и `\begin{document}`. Произвольные пакеты не поддерживаются. Неизвестная команда вне формул, повторная метка, незакрытый блок или отсутствие разбора останавливают сборку с сообщением об ошибке. HTML в исходниках не используется.
 
-Интерактивная модель взвешенных клеток: `\interactive{conditional-geometry}`. Текст и задания редактируются в .tex, поведение модели — в assets/conditional-geometry*.js.
+Интерактивная модель клеток с разным числом равновероятных исходов: `\interactive{conditional-geometry}`. Текст и задания редактируются в .tex, поведение модели — в assets/conditional-geometry*.js.
+
+Для урока только с теорией в data/topics.json задаются `hasProblems: false` и `hasHomework: false`; разделы задач и ДЗ в .tex не добавляются.

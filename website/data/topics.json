@@ -74,7 +74,9 @@
       "order": 7,
       "x": 1100,
       "y": 800,
-      "tocTheory": "headings"
+      "tocTheory": "headings",
+      "hasProblems": false,
+      "hasHomework": false
     }
   ],
   "edges": [

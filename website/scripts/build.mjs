@@ -76,7 +76,7 @@ await writeFile(path.join(dist, 'index.html'), render(templates.base, {
 const sectionDefinitions = [ ['theory', 'Теория'], ['problems', 'Задачи'], ['homework', 'Домашнее задание'] ];
 for (const [index, topic] of topics.entries()) {
   const content = {};
-  const availableSections = sectionDefinitions.filter(([id]) => id !== 'homework' || topic.hasHomework !== false);
+  const availableSections = sectionDefinitions.filter(([id]) => (id !== 'homework' || topic.hasHomework !== false) && (id !== 'problems' || topic.hasProblems !== false));
   for (const [key] of availableSections) {
     try { content[key] = await readFile(key === 'theory' ? path.join(project, '.generated/theory', `${topic.id}.html`) : path.join(project, '.generated/content', topic.id, `${key}.html`), 'utf8'); }
     catch (error) { if (error.code !== 'ENOENT') throw error; content[key] = ''; }

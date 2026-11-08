@@ -7,11 +7,11 @@ ROOT=Path(__file__).resolve().parents[1]
 def compile_lesson(source,topic):
     source=re.sub(r'(?<!\\)%[^\n]*','',source)
     sections=list(re.finditer(r'\\section\{(Теория|Задачи|Домашнее задание)\}',source))
-    expected=['Теория','Задачи']+([] if topic.get('hasHomework') is False else ['Домашнее задание'])
+    expected=['Теория']+([] if topic.get('hasProblems') is False else ['Задачи'])+([] if topic.get('hasHomework') is False else ['Домашнее задание'])
     if [m[1] for m in sections]!=expected or source[:sections[0].start()].strip():raise ValueError('Ожидаются разделы: '+', '.join(expected))
     out={};ids=set()
     for i,m in enumerate(sections):
-        key=['theory','problems','homework'][i];text=source[m.end():sections[i+1].start() if i+1<len(sections) else len(source)]
+        key={'Теория':'theory','Задачи':'problems','Домашнее задание':'homework'}[m[1]];text=source[m.end():sections[i+1].start() if i+1<len(sections) else len(source)]
         nodes=Renderer(text).parse();walk=[c for n in nodes for c in [n,*list(n.walk())]]
         for n in walk:
             ident=n.attrs.get('id')

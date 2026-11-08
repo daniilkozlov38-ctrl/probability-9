@@ -4,17 +4,17 @@
   for(const lab of document.querySelectorAll('[data-geometry-lab]')){
     const svg=lab.querySelector('[data-geometry-board]');let state={...model.defaults},gesture=null;
     const el=(tag,attrs,parent=svg,text)=>{const n=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;parent.append(n);return n;};
-    el('title',{},svg,'Вероятности по весам исходов');
+    el('title',{},svg,'Вероятности по числу равновероятных исходов');
     const cells=el('g',{'class':'geometry-cells'});
     for(let r=0;r<10;r++)for(let c=0;c<10;c++){
-      const w=model.weights[r][c],n=el('rect',{x:c*50,y:r*50,width:50,height:50,fill:`rgba(187,121,72,${.03+w*.027})`,stroke:'#e2d5c7','stroke-width':1},cells);
-      el('title',{},n,`Строка ${r+1}, столбец ${c+1}: вес ${w}`);
+      const w=model.counts[r][c],n=el('rect',{x:c*50,y:r*50,width:50,height:50,fill:`rgba(187,121,72,${.03+w*.027})`,stroke:'#e2d5c7','stroke-width':1},cells);
+      el('title',{},n,`Строка ${r+1}, столбец ${c+1}: ${w} элементарных исходов`);
     }
     const a=el('rect',{'class':'geometry-band geometry-band-a','data-drag':'a-move'});
     const b=el('rect',{'class':'geometry-band geometry-band-b','data-drag':'b-move'});
     const intersection=el('rect',{'class':'geometry-intersection','pointer-events':'none'});
     const numbers=el('g',{'class':'geometry-numbers','pointer-events':'none'});
-    for(let r=0;r<10;r++)for(let c=0;c<10;c++)el('text',{x:c*50+25,y:r*50+26},numbers,model.weights[r][c]);
+    for(let r=0;r<10;r++)for(let c=0;c<10;c++)el('text',{x:c*50+25,y:r*50+26},numbers,model.counts[r][c]);
     const frame=el('rect',{x:0,y:0,width:500,height:500,rx:2,fill:'none',stroke:'#a58b74','stroke-width':2,'pointer-events':'none'});
     const handles={};
     for(const kind of ['a-start','a-end','b-start','b-end']){
@@ -38,11 +38,11 @@
         lab.querySelector(`[data-geometry-value="${key}"]`).value=state[key];
       }
       lab.querySelector('[data-geometry-total]').textContent=m.total;
-      for(const [name,weight,prob]of [['pa',m.a,m.pa],['pb',m.b,m.pb],['pab',m.ab,m.pab]])lab.querySelector(`[data-geometry-${name}]`).value=`${weight} / ${m.total} = ${fmt(prob)}`;
+      for(const [name,count,prob]of [['pa',m.a,m.pa],['pb',m.b,m.pb],['pab',m.ab,m.pab]])lab.querySelector(`[data-geometry-${name}]`).value=`${count} / ${m.total} = ${fmt(prob)}`;
       lab.querySelector('[data-geometry-conditional]').value=m.conditional===null?'не определена':`${m.ab} / ${m.b} = ${fmt(m.conditional)}`;
       lab.querySelector('[data-geometry-ratio]').style.width=`${(m.conditional??0)*100}%`;
-      lab.querySelector('[data-geometry-explanation]').textContent=m.conditional===null?'В условии B нет исходов. Его вес равен нулю — делить на него нельзя.':`Внутри B всего ${m.b} единиц веса. Из них ${m.ab} попали также в A: это ${fmt(m.conditional*100)}% веса условия.`;
-      lab.dataset.aWeight=m.a;lab.dataset.bWeight=m.b;lab.dataset.intersectionWeight=m.ab;lab.dataset.conditional=m.conditional===null?'undefined':String(m.conditional);
+      lab.querySelector('[data-geometry-explanation]').textContent=m.conditional===null?'В условии B нет исходов. Их число равно нулю — делить на него нельзя.':`Внутри B всего ${m.b} элементарных исходов. Из них ${m.ab} находятся также в A: это ${fmt(m.conditional*100)}% исходов условия.`;
+      lab.dataset.aCount=m.a;lab.dataset.bCount=m.b;lab.dataset.intersectionCount=m.ab;lab.dataset.conditional=m.conditional===null?'undefined':String(m.conditional);
     }
     for(const input of lab.querySelectorAll('[data-geometry-input]'))input.addEventListener('input',()=>{state[input.dataset.geometryInput]=Number(input.value);render();});
     lab.querySelector('[data-geometry-reset]').addEventListener('click',()=>{state={...model.defaults};render();});
