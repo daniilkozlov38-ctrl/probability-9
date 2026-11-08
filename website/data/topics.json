@@ -83,8 +83,8 @@
       "id": "negation-test",
       "title": "Отрицания и противоположные события",
       "order": 8,
-      "x": 1100,
-      "y": 1100,
+      "x": 640,
+      "y": 390,
       "type": "trainer"
     }
   ],
@@ -126,6 +126,12 @@
       "toPort": "left",
       "fromPosition": 0.8,
       "from": "conditional-probability"
+    },
+    {
+      "fromPort": "left",
+      "toPort": "right",
+      "from": "equally-likely-outcomes",
+      "to": "negation-test"
     }
   ]
 }
