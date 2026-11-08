@@ -23,7 +23,7 @@
 <div class="actions"><button id="finish" class="primary" disabled>Завершить и проверить себя</button><span id="remaining" class="muted"></span></div>
 <p class="footer" id="storage-note">Ответы сохраняются только в этом браузере на этом устройстве. Учителю они не отправляются.</p>
 </section>
-<section id="review" hidden aria-label="Самопроверка"><div class="card"><div class="tag">Тест завершён</div><h2 id="summary" tabindex="-1">Теперь сравни свои ответы</h2><p>Формулировки могут отличаться словами и совпадать по смыслу. Проверь: исходное и противоположное события не могут произойти одновременно, а одно из них обязательно произойдёт.</p><p class="notice">Оценки по совпадению текста нет. Отметь сам, где ответ совпал по смыслу, а что нужно повторить.</p><p id="self-score" role="status"></p><div class="actions no-print"><button id="edit">Вернуться к ответам</button><button id="print">Распечатать / сохранить PDF</button></div></div><div id="review-list"></div><div class="card"><h2>Короткая памятка</h2><ul class="rules"><li>«Все» → «Хотя бы один не…».</li><li>«Хотя бы один» → «Ни одного».</li><li>«Ни одного» → «Хотя бы один».</li><li>«A и B» → «Не A или не B».</li><li>«A или B» → «Не A и не B». Здесь «или» включает случай, когда верны оба утверждения.</li><li>«Ровно один» → «Ни одного или хотя бы два».</li></ul><p class="muted">Задания 17–26 адаптированы по <a href="https://math.mosolymp.ru/upload/files/2020/other/444/5/1/2020-02-01-5-postroenie_otritsaniy-vstuplenie.pdf" target="_blank" rel="noopener">листку школы № 444 «Построение отрицаний. Вступление»</a>.</p></div></section>
+<section id="review" hidden aria-label="Самопроверка"><div class="card"><div class="tag">Тест завершён</div><h2 id="summary" tabindex="-1">Теперь сравни свои ответы</h2><p>Формулировки могут отличаться словами и совпадать по смыслу. Проверь: исходное и противоположное события не могут произойти одновременно, а одно из них обязательно произойдёт.</p><p class="notice">Оценки по совпадению текста нет. Отметь сам, где ответ совпал по смыслу, а что нужно повторить.</p><p id="self-score" role="status"></p><div class="actions no-print"><button id="edit">Вернуться к ответам</button><button id="print">Распечатать / сохранить PDF</button></div></div><div id="review-list"></div><div class="card"><h2>Короткая памятка</h2><ul class="rules"><li>«Все» → «Хотя бы один не…».</li><li>«Хотя бы один» → «Ни одного».</li><li>«Ни одного» → «Хотя бы один».</li><li>«A и B» → «Не A или не B».</li><li>«A или B» → «Не A и не B». Здесь «или» включает случай, когда верны оба утверждения.</li><li>«Ровно один» → «Ни одного или хотя бы два».</li></ul><p class="muted">Условия заданий 17–26 приведены дословно по <a href="https://math.mosolymp.ru/upload/files/2020/other/444/5/1/2020-02-01-5-postroenie_otritsaniy-vstuplenie.pdf" target="_blank" rel="noopener">листку школы № 444 «Построение отрицаний. Вступление»</a>.</p></div></section>
 </main>
 <script>
 (()=>{'use strict';
@@ -142,98 +142,108 @@ const tasks=[
   },
   {
     "type": "Допустимые варианты",
-    "context": "В мире ёжика яблоко бывает красным или зелёным, а по размеру — большим или маленьким.",
-    "statement": "Ёжик выбирал яблоки красного цвета. Перечислите возможные сочетания цвета и размера выбранных яблок.",
-    "answer": "Красные крупные; красные маленькие.",
+    "context": "1. В параллельной вселенной существует всего два размера яблок: большие и маленькие, и два цвета яблок: красные и зелёные. Назовите, какие яблоки мог взять ёжик, если",
+    "statement": "(a) он взял красные яблоки;",
+    "answer": "Большие красные и маленькие красные яблоки.",
     "why": "Цвет задан, размер — любой из двух допустимых.",
-    "sourcePoint": "1(a)"
+    "sourcePoint": "1(a)",
+    "instruction": "Назовите, какие яблоки мог взять ёжик."
   },
   {
     "type": "Допустимые варианты",
-    "context": "В мире ёжика яблоко бывает красным или зелёным, а по размеру — большим или маленьким.",
-    "statement": "Ёжик оставил все крупные яблоки на деревьях. Перечислите возможные сочетания цвета и размера собранных яблок.",
-    "answer": "Маленькие красные; маленькие зелёные.",
+    "context": "1. В параллельной вселенной существует всего два размера яблок: большие и маленькие, и два цвета яблок: красные и зелёные. Назовите, какие яблоки мог взять ёжик, если",
+    "statement": "(b) он не брал большие яблоки;",
+    "answer": "Маленькие красные и маленькие зелёные яблоки.",
     "why": "Ограничение размера исключает крупные яблоки, но не задаёт цвет.",
-    "sourcePoint": "1(b)"
+    "sourcePoint": "1(b)",
+    "instruction": "Назовите, какие яблоки мог взять ёжик."
   },
   {
     "type": "Допустимые варианты",
-    "context": "В мире ёжика яблоко бывает красным или зелёным, а по размеру — большим или маленьким.",
-    "statement": "Ёжик исключил яблоки, сочетающие крупный размер с зелёным цветом. Перечислите оставшиеся сочетания.",
-    "answer": "Крупные красные; маленькие красные; маленькие зелёные.",
+    "context": "1. В параллельной вселенной существует всего два размера яблок: большие и маленькие, и два цвета яблок: красные и зелёные. Назовите, какие яблоки мог взять ёжик, если",
+    "statement": "(d) он не брал яблоки, которые одновременно большие и зеленые.",
+    "answer": "Большие красные, маленькие красные и маленькие зелёные яблоки.",
     "why": "Запрещено одно сочетание двух признаков. Яблоко с одним из этих признаков остаётся допустимым.",
-    "sourcePoint": "1(d)"
+    "sourcePoint": "1(d)",
+    "instruction": "Назовите, какие яблоки мог взять ёжик."
   },
   {
-    "type": "Отрицание утверждения",
-    "context": "Ёжик собирает грибы и ягоды, а вечером наблюдает звёздное небо. Количество — целое неотрицательное число.",
-    "statement": "Число грибов, собранных ёжиком, равно десяти.",
-    "answer": "Число грибов, собранных ёжиком, не равно десяти.",
+    "type": "Задание про белку",
+    "context": "2. В той же вселенной жила белка, которой нужно делать всё тоже самое, что делает ёжик, но по-другому. Например, если ёжик съест зелёное яблоко, то белке тоже нужно съесть яблоко, но красное. Подскажите принципиальной белке, что ей делать, если ёжик:",
+    "statement": "(a) соберёт в лесу 10 грибочков;",
+    "answer": "Белке нужно собрать в лесу не 10 грибочков: меньше 10 или больше 10.",
     "why": "Подходят как меньшие, так и большие количества.",
-    "sourcePoint": "2(a)"
+    "sourcePoint": "2(a)",
+    "instruction": "Подскажите принципиальной белке, что ей делать."
   },
   {
-    "type": "Отрицание утверждения",
-    "context": "Ёжик собирает грибы и ягоды, а вечером наблюдает звёздное небо. Количество — целое неотрицательное число.",
-    "statement": "Ёжик добыл как минимум тринадцать ягод.",
-    "answer": "Ёжик добыл максимум двенадцать ягод.",
+    "type": "Задание про белку",
+    "context": "2. В той же вселенной жила белка, которой нужно делать всё тоже самое, что делает ёжик, но по-другому. Например, если ёжик съест зелёное яблоко, то белке тоже нужно съесть яблоко, но красное. Подскажите принципиальной белке, что ей делать, если ёжик:",
+    "statement": "(b) найдёт не меньше 13 ягод земляники;",
+    "answer": "Белке нужно найти меньше 13 ягод земляники (не больше 12).",
     "why": "Граница 13 включена в исходный диапазон, поэтому исключена из противоположного.",
-    "sourcePoint": "2(b)"
+    "sourcePoint": "2(b)",
+    "instruction": "Подскажите принципиальной белке, что ей делать."
   },
   {
-    "type": "Отрицание утверждения",
-    "context": "Ёжик собирает грибы и ягоды, а вечером наблюдает звёздное небо. Количество — целое неотрицательное число.",
-    "statement": "Ёжик распознал свыше десяти созвездий.",
-    "answer": "Ёжик распознал максимум десять созвездий.",
+    "type": "Задание про белку",
+    "context": "2. В той же вселенной жила белка, которой нужно делать всё тоже самое, что делает ёжик, но по-другому. Например, если ёжик съест зелёное яблоко, то белке тоже нужно съесть яблоко, но красное. Подскажите принципиальной белке, что ей делать, если ёжик:",
+    "statement": "(d) найдёт на звездном небе больше 10 созвездий.",
+    "answer": "Белке нужно найти на звёздном небе не больше 10 созвездий.",
     "why": "Десять входит в отрицание строгого неравенства.",
-    "sourcePoint": "2(d)"
+    "sourcePoint": "2(d)",
+    "instruction": "Подскажите принципиальной белке, что ей делать."
   },
   {
     "type": "Отрицание утверждения",
-    "context": "Лесные звери участвуют в турнире.",
-    "statement": "Победителем турнира стал заяц.",
-    "answer": "Заяц не стал победителем турнира.",
+    "context": "3. Ёжик, белка и заяц участвовали во вселесном турнире. Постройте отрицания к следующим утверждениям.",
+    "statement": "(a) Заяц занял 1 место.",
+    "answer": "Заяц не занял 1 место.",
     "why": "Достаточно исключить первое место; конкретное другое место указывать не нужно.",
-    "sourcePoint": "3(a)"
+    "sourcePoint": "3(a)",
+    "instruction": "Постройте отрицание к утверждению."
   },
   {
     "type": "Отрицание утверждения",
-    "context": "Лесные звери участвуют в турнире. ИЛИ - логическое (дизъюнкция).",
-    "statement": "Место белки — третье либо восьмое.",
-    "answer": "Место белки отличается и от третьего, и от восьмого.",
+    "context": "3. Ёжик, белка и заяц участвовали во вселесном турнире. Постройте отрицания к следующим утверждениям.",
+    "statement": "(b) Белка заняла 3 или 8 место.",
+    "answer": "Белка не заняла ни 3, ни 8 место.",
     "why": "Нужно исключить каждый из двух разрешённых исходным утверждением вариантов.",
-    "sourcePoint": "3(b)"
+    "sourcePoint": "3(b)",
+    "instruction": "Постройте отрицание к утверждению."
   },
   {
     "type": "Отрицание утверждения",
-    "context": "Лесные звери участвуют в турнире.",
-    "statement": "Белка не возглавила итоговый список и не замкнула его.",
-    "answer": "Белка возглавила итоговый список или замкнула его.",
+    "context": "3. Ёжик, белка и заяц участвовали во вселесном турнире. Постройте отрицания к следующим утверждениям.",
+    "statement": "(d) Белка была не первой и не последней.",
+    "answer": "Белка была первой или последней.",
     "why": "Отрицаем каждую часть и заменяем союз «и» на логическое «или».",
-    "sourcePoint": "3(d)"
+    "sourcePoint": "3(d)",
+    "instruction": "Постройте отрицание к утверждению."
   },
   {
     "type": "Отрицание утверждения",
-    "context": "Заяц, белка и ёжик бегут наперегонки.",
-    "statement": "Белка финишировала после зайца, опередив ёжика.",
-    "answer": "Белка финишировала не позже зайца или не раньше ёжика.",
+    "context": "3. Ёжик, белка и заяц участвовали во вселесном турнире. Постройте отрицания к следующим утверждениям.",
+    "statement": "(e) Белка прибежала позже зайца, но до ежика.",
+    "answer": "Белка прибежала не позже зайца или не раньше ёжика.",
     "why": "Достаточно нарушения любого из двух сравнений. Такая формулировка учитывает и одновременный финиш.",
-    "sourcePoint": "3(e)"
+    "sourcePoint": "3(e)",
+    "instruction": "Постройте отрицание к утверждению."
   }
 ];
-const $=id=>document.getElementById(id),key='probability-negations-v2';
+const $=id=>document.getElementById(id),key='probability-negations-v3';
 let state={answers:tasks.map(()=>''),ratings:tasks.map(()=>null),index:0,finished:false};
 try{const saved=JSON.parse(localStorage.getItem(key));if(saved&&Array.isArray(saved.answers)&&saved.answers.length===tasks.length){state.answers=saved.answers.map(a=>typeof a==='string'?a.slice(0,4000):'');state.ratings=tasks.map((_,i)=>['yes','repeat'].includes(saved.ratings?.[i])?saved.ratings[i]:null);state.index=Number.isInteger(saved.index)?Math.max(0,Math.min(tasks.length-1,saved.index)):0;state.finished=saved.finished===true&&state.answers.every(a=>a.trim());}}catch{}
 function save(){try{localStorage.setItem(key,JSON.stringify(state));}catch{$('storage-note').textContent='Сохранение в этом браузере недоступно. Не закрывай страницу до завершения теста.';}}
 function count(){return state.answers.filter(a=>a.trim()).length;}
 function progress(){const n=count();$('progress-text').textContent=`Заполнено ${n} из ${tasks.length}`;$('progress-bar').style.width=`${n/tasks.length*100}%`;document.querySelector('[role=progressbar]').setAttribute('aria-valuenow',n);document.querySelector('[role=progressbar]').setAttribute('aria-valuemax',tasks.length);$('finish').disabled=n!==tasks.length;$('remaining').textContent=n===tasks.length?'Все ответы готовы. Можно перейти к самопроверке.':`Осталось заполнить: ${tasks.length-n}.`;
 [...$('task-nav').children].forEach((b,i)=>{b.classList.toggle('filled',!!state.answers[i].trim());b.setAttribute('aria-label',`Задание ${i+1}${state.answers[i].trim()?', ответ записан':''}`);if(i===state.index)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});}
-function render(focus=false){const t=tasks[state.index];$('task-category').textContent=t.type==='Отрицание утверждения'?'Напишите отрицание к этому утверждению.':t.type==='Противоположное событие'?'Напишите событие, противоположное событию A.':'Перечислите все допустимые варианты.';$('answer-help').textContent=t.type==='Противоположное событие'?'Опишите событие, которое произойдёт тогда и только тогда, когда событие A не произойдёт. Вероятность вычислять не нужно.':t.type==='Допустимые варианты'?'Перечислите все возможные сочетания признаков.':'Сформулируй по существу: не ограничивайся словами «неверно, что…».';$('answer').placeholder=t.type==='Противоположное событие'?'Противоположное событие: …':t.type==='Допустимые варианты'?'Допустимые варианты: …':'Отрицание утверждения: …';$('task-title').textContent=`Задание ${state.index+1} из ${tasks.length}`;$('task-context').textContent=t.context;$('task-statement').textContent=t.statement;$('answer').value=state.answers[state.index];$('previous').disabled=state.index===0;$('next').hidden=state.index===tasks.length-1;progress();if(focus)$('task-title').focus();}
+function render(focus=false){const t=tasks[state.index];$('task-category').textContent=t.instruction|| (t.type==='Отрицание утверждения'?'Напишите отрицание к этому утверждению.':t.type==='Противоположное событие'?'Напишите событие, противоположное событию A.':'Перечислите все допустимые варианты.');$('answer-help').textContent=t.sourcePoint?'Запишите ответ на вопрос из листка.':t.type==='Противоположное событие'?'Опишите событие, которое произойдёт тогда и только тогда, когда событие A не произойдёт. Вероятность вычислять не нужно.':t.type==='Допустимые варианты'?'Перечислите все возможные сочетания признаков.':'Сформулируй по существу: не ограничивайся словами «неверно, что…».';$('answer').placeholder=t.sourcePoint?'Твой ответ: …':t.type==='Противоположное событие'?'Противоположное событие: …':t.type==='Допустимые варианты'?'Допустимые варианты: …':'Отрицание утверждения: …';$('task-title').textContent=`Задание ${state.index+1} из ${tasks.length}${t.sourcePoint ? ' · Листок '+t.sourcePoint : ''}`;$('task-context').textContent=t.context;$('task-statement').textContent=t.statement;$('answer').value=state.answers[state.index];$('previous').disabled=state.index===0;$('next').hidden=state.index===tasks.length-1;progress();if(focus)$('task-title').focus();}
 tasks.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.textContent=i+1;b.onclick=()=>{state.index=i;save();render(true);};$('task-nav').append(b);});
 $('answer').addEventListener('input',()=>{state.answers[state.index]=$('answer').value;state.ratings[state.index]=null;save();progress();});
 $('previous').onclick=()=>{if(state.index>0)state.index--;save();render(true);};$('next').onclick=()=>{if(state.index<tasks.length-1)state.index++;save();render(true);};
 function score(){const checked=state.ratings.filter(Boolean).length,yes=state.ratings.filter(x=>x==='yes').length;$('self-score').textContent=`Самопроверка: отмечено ${checked} из ${tasks.length}. Совпало по смыслу: ${yes}. Повторить: ${checked-yes}.`;}
-function review(focus=false){$('quiz').hidden=true;$('review').hidden=false;$('review-list').replaceChildren();tasks.forEach((t,i)=>{const card=document.createElement('article');card.className='card review-card';const heading=document.createElement('h3');heading.textContent=`${i+1}. ${t.type}`;const context=document.createElement('p');context.className='muted';context.textContent=t.context;const statement=document.createElement('p');statement.className='statement quote';statement.textContent=t.statement;const label=document.createElement('p');label.className='check-title';label.textContent='Твой ответ';const own=document.createElement('p');own.className='answer-text';own.textContent=state.answers[i];const correct=document.createElement('div');correct.className='correct';const title=document.createElement('strong');title.textContent='Правильная формулировка';const answer=document.createElement('p');answer.textContent=t.answer;correct.append(title,answer);const why=document.createElement('p');why.textContent=t.why;const field=document.createElement('fieldset');field.className='rating no-print';const legend=document.createElement('legend');legend.textContent='Твоя оценка ответа';field.append(legend);const row=document.createElement('div');row.className='actions';row.style.marginTop='0';[['yes','Совпало по смыслу'],['repeat','Нужно повторить']].forEach(([value,text])=>{const b=document.createElement('button');b.textContent=text;b.type='button';b.setAttribute('aria-pressed',state.ratings[i]===value);b.onclick=()=>{state.ratings[i]=value;[...row.children].forEach((x,j)=>x.setAttribute('aria-pressed',j===(value==='yes'?0:1)));save();score();};row.append(b);});field.append(row);card.append(heading,context,statement,label,own,correct,why,field);$('review-list').append(card);});score();if(focus){$('summary').focus();window.scrollTo(0,0);}}
+function review(focus=false){$('quiz').hidden=true;$('review').hidden=false;$('review-list').replaceChildren();tasks.forEach((t,i)=>{const card=document.createElement('article');card.className='card review-card';const heading=document.createElement('h3');heading.textContent=`${i+1}. ${t.sourcePoint ? 'Листок '+t.sourcePoint : t.type}`;const context=document.createElement('p');context.className='muted';context.textContent=t.context;const statement=document.createElement('p');statement.className='statement quote';statement.textContent=t.statement;const label=document.createElement('p');label.className='check-title';label.textContent='Твой ответ';const own=document.createElement('p');own.className='answer-text';own.textContent=state.answers[i];const correct=document.createElement('div');correct.className='correct';const title=document.createElement('strong');title.textContent='Правильная формулировка';const answer=document.createElement('p');answer.textContent=t.answer;correct.append(title,answer);const why=document.createElement('p');why.textContent=t.why;const field=document.createElement('fieldset');field.className='rating no-print';const legend=document.createElement('legend');legend.textContent='Твоя оценка ответа';field.append(legend);const row=document.createElement('div');row.className='actions';row.style.marginTop='0';[['yes','Совпало по смыслу'],['repeat','Нужно повторить']].forEach(([value,text])=>{const b=document.createElement('button');b.textContent=text;b.type='button';b.setAttribute('aria-pressed',state.ratings[i]===value);b.onclick=()=>{state.ratings[i]=value;[...row.children].forEach((x,j)=>x.setAttribute('aria-pressed',j===(value==='yes'?0:1)));save();score();};row.append(b);});field.append(row);card.append(heading,context,statement,label,own,correct,why,field);$('review-list').append(card);});score();if(focus){$('summary').focus();window.scrollTo(0,0);}}
 $('finish').onclick=()=>{if(count()!==tasks.length)return;state.finished=true;save();review(true);};$('edit').onclick=()=>{state.finished=false;save();$('review').hidden=true;$('quiz').hidden=false;render(true);window.scrollTo(0,0);};$('print').onclick=()=>window.print();$('reset').onclick=()=>{$('reset-confirm').hidden=false;$('confirm-reset').focus();};$('cancel-reset').onclick=()=>{$('reset-confirm').hidden=true;$('reset').focus();};$('confirm-reset').onclick=()=>{state={answers:tasks.map(()=>''),ratings:tasks.map(()=>null),index:0,finished:false};save();$('reset-confirm').hidden=true;render(true);};render();if(state.finished)review();
 })();
 </script>
