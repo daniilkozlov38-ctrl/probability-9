@@ -98,7 +98,7 @@ for (const [index, topic] of topics.entries()) {
   const previous = topics[index - 1];
   const next = topics[index + 1];
   const pagination = (target, direction) => target ? `<a class="pagination-link ${direction}" href="../${target.id}/index.html"><span>${direction === 'previous' ? '← Предыдущая тема' : 'Следующая тема →'}</span><strong>${escape(target.title)}</strong></a>` : '<span class="pagination-spacer" aria-hidden="true"></span>';
-  const body = render(templates.topic, { ...shared, root:'../../', number:String(topic.order).padStart(2, '0'), topicTitle:escape(topic.title), sections, sectionLinks, tocLinks, previous:pagination(previous, 'previous'), next:pagination(next, 'next') });
+  const body = render(templates.topic, { ...shared, root:'../../', number:String(topic.order).padStart(2, '0'), topicLabel:topic.additional ? 'Дополнительная тема' : `Тема ${String(topic.order).padStart(2, '0')}`, topicTitle:escape(topic.title), sections, sectionLinks, tocLinks, previous:pagination(previous, 'previous'), next:pagination(next, 'next') });
   const directory = path.join(dist, 'topics', topic.id);
   await mkdir(directory, { recursive: true });
   await writeFile(path.join(directory, 'index.html'), render(templates.base, {
