@@ -86,6 +86,14 @@
       "x": 640,
       "y": 390,
       "type": "trainer"
+    },
+    {
+      "id": "combinatorics-rules",
+      "title": "Правила умножения и сложения в комбинаторике",
+      "order": 9,
+      "x": 160,
+      "y": 1100,
+      "tocTheory": "headings"
     }
   ],
   "edges": [

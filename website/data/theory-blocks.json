@@ -384,5 +384,56 @@
         "heading": false
       }
     ]
+  },
+  {
+    "id": "combinatorics-rules",
+    "title": "Правила умножения и сложения в комбинаторике",
+    "blocks": [
+      {
+        "id": "theory-block-1",
+        "label": "мощность множества",
+        "heading": false
+      },
+      {
+        "id": "theory-block-2",
+        "label": "Мощность множества … обозначается …. — обозначение",
+        "heading": false
+      },
+      {
+        "id": "theory-subtopic-1",
+        "label": "Правило сложения",
+        "heading": true
+      },
+      {
+        "id": "theory-block-4",
+        "label": "Правило сложения",
+        "heading": false
+      },
+      {
+        "id": "theory-subtopic-2",
+        "label": "Правило умножения",
+        "heading": true
+      },
+      {
+        "id": "theory-block-6",
+        "label": "упорядоченной парой",
+        "heading": false
+      },
+      {
+        "id": "theory-block-7",
+        "label": "Для большего числа множеств так же определяются упорядоченные наборы",
+        "heading": false
+      },
+      {
+        "id": "theory-block-8",
+        "label": "В наборе … на …-м месте стоит элемент … из множества …",
+        "heading": false
+      },
+      {
+        "id": "theory-block-9",
+        "label": "Правило умножения",
+        "heading": false
+      }
+    ]
   }
 ]
